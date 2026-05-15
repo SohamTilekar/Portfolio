@@ -79,7 +79,7 @@ nav {
 }
 
 .nav-content {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -100,6 +100,15 @@ nav {
     margin-left: 30px;
     font-size: 0.9rem;
     transition: color 0.3s;
+}
+
+.nav-separator {
+    width: 1px;
+    height: 20px;
+    background: var(--card-border);
+    margin-left: 30px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .nav-links a:hover {
@@ -149,7 +158,11 @@ nav {
     left: 0;
     width: 0%;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(
+        90deg,
+        var(--accent-primary),
+        var(--accent-secondary)
+    );
     z-index: 1000;
     transition: width 0.1s ease;
 }
@@ -299,7 +312,39 @@ nav {
     }
 }
 
-/* Projects Highlight */
+.projects-more-link {
+    color: var(--accent-primary);
+    cursor: pointer;
+    font-family: "Fira Code", monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-bottom: 2px solid var(--accent-primary);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.projects-more-link:hover {
+    color: #fff;
+    border-color: #fff;
+    transform: translateY(2px);
+}
+
+.projects-github-note {
+    margin-top: 15px;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
+
+.projects-github-note a {
+    color: var(--accent-secondary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.projects-github-note a:hover {
+    text-decoration: underline;
+}
 #projects {
     position: relative;
     padding: 80px 20px;
@@ -386,6 +431,11 @@ section {
     border-color: rgba(0, 240, 255, 0.3);
 }
 
+.glass-card strong {
+    color: var(--accent-primary);
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.3);
+}
+
 /* Skills */
 .skills-grid {
     display: grid;
@@ -429,11 +479,10 @@ section {
     align-items: center;
 }
 
-.skill-category li::before {
-    content: ">>";
+.highlighted {
     color: var(--accent-primary);
-    margin-right: 10px;
-    font-family: monospace;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+    font-weight: 600;
 }
 
 /* Projects */
@@ -487,9 +536,70 @@ section {
 
 .project-header {
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.header-top {
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+}
+
+.project-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+    font-family: "Fira Code", monospace;
+    opacity: 0.8;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.theme-giggly .stat-item i {
+    color: #92eeff;
+}
+.theme-tilekar .stat-item i {
+    color: #ffd68a;
+}
+.theme-berus .stat-item i {
+    color: #2d5c76;
+}
+.theme-ss32 .stat-item i {
+    color: #00ff41;
+}
+.theme-friday .stat-item i {
+    color: #ab89ff;
+}
+.theme-vidiopy .stat-item i {
+    color: #6feccf;
+}
+
+.theme-giggly .project-stats {
+    color: rgba(146, 238, 255, 0.7);
+}
+.theme-tilekar .project-stats {
+    color: rgba(255, 214, 138, 0.7);
+}
+.theme-berus .project-stats {
+    color: #555;
+}
+.theme-ss32 .project-stats {
+    color: rgba(126, 255, 151, 0.7);
+}
+.theme-friday .project-stats {
+    color: rgba(171, 137, 255, 0.7);
+}
+.theme-vidiopy .project-stats {
+    color: rgba(111, 236, 207, 0.7);
 }
 
 .tech-tag {
@@ -516,12 +626,40 @@ section {
     color: var(--text-dim);
 }
 
-.project-details {
-    margin-top: 16px;
+.project-split {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    align-items: flex-start;
 }
 
-.project-details ul {
-    margin: 10px 0 0 18px;
+.project-asset {
+    flex: 0 0 180px;
+}
+
+.clickable-asset {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.clickable-asset:hover {
+    transform: scale(1.05);
+}
+
+.project-details {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .project-split {
+        flex-direction: column;
+    }
+    .project-asset {
+        flex: 0 0 100%;
+    }
 }
 
 .project-details li {
@@ -1547,6 +1685,105 @@ section {
 .ss32-board {
     display: none !important;
 }
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.modal-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+}
+
+.modal-viewer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-viewer::before {
+    display: none;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.modal-content:active {
+    cursor: grabbing;
+}
+
+.modal-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2001;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    mix-blend-mode: difference;
+}
+
+.modal-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.modal-btn:hover {
+    transform: scale(1.1);
+}
+
+.close {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 14px;
+    border-radius: 6px;
+    transition: transform 0.2s;
+}
+
+.close:hover {
+    transform: scale(1.1);
+}
 .theme-giggly {
     background: radial-gradient(
         circle at top left,
@@ -1554,6 +1791,9 @@ section {
         rgba(10, 15, 24, 0.9)
     );
     border-color: rgba(129, 173, 255, 0.42);
+    /* Improve readability */
+    background: rgba(10, 15, 24, 0.85); 
+    backdrop-filter: blur(10px);
 }
 
 .theme-tilekar {
@@ -1966,4 +2206,103 @@ footer {
 /* Ensure old ss32-board is hidden */
 .ss32-board {
     display: none !important;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.modal-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+}
+
+.modal-viewer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-viewer::before {
+    display: none;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.modal-content:active {
+    cursor: grabbing;
+}
+
+.modal-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2001;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    mix-blend-mode: difference;
+}
+
+.modal-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.modal-btn:hover {
+    transform: scale(1.1);
+}
+
+.close {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 14px;
+    border-radius: 6px;
+    transition: transform 0.2s;
+}
+
+.close:hover {
+    transform: scale(1.1);
 }

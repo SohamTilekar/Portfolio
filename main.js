@@ -111,11 +111,264 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Show more projects
+  const showMoreBtn = document.getElementById("show-more-projects");
+  const hiddenProjects = document.querySelectorAll(".hidden-project");
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", () => {
+      hiddenProjects.forEach((project) => {
+        project.style.display = "flex";
+      });
+      showMoreBtn.style.display = "none";
+    });
+  }
+
+  // Modal Logic
+  let scale = 1;
+  let isDragging = false;
+  let startX, startY, translateX = 0, translateY = 0;
+  
+  const modalImg = document.getElementById("modalImg");
+  const modalViewer = document.querySelector(".modal-viewer");
+
+  window.openModal = (imgSrc) => {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "block";
+    modalImg.src = imgSrc;
+    
+    // Reset transforms
+    scale = 1;
+    translateX = 0;
+    translateY = 0;
+    updateTransform(false);
+  };
+
+  window.closeModal = () => {
+    document.getElementById("imageModal").style.display = "none";
+  };
+
+  function updateTransform(smooth = true) {
+    if (smooth) {
+      modalImg.style.transition = 'transform 0.2s ease-out';
+    } else {
+      modalImg.style.transition = 'none';
+    }
+    modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+  }
+
+  window.zoomIn = () => {
+    scale += 0.2;
+    updateTransform();
+  };
+
+  window.zoomOut = () => {
+    scale = Math.max(0.2, scale - 0.2); // allow zooming out more
+    updateTransform();
+  };
+
+  // Keyboard controls
+  document.addEventListener("keydown", (event) => {
+    if (document.getElementById("imageModal").style.display === "block") {
+      if (event.key === "Escape") closeModal();
+      if (event.key === "+" || event.key === "=") window.zoomIn();
+      if (event.key === "-" || event.key === "_") window.zoomOut();
+    }
+  });
+
+  // Mouse wheel/Touchpad zoom
+  modalViewer.addEventListener("wheel", (event) => {
+    event.preventDefault();
+    if (event.ctrlKey || event.metaKey) {
+        // Zoom
+        const zoomSensitivity = 0.005;
+        const delta = -event.deltaY * zoomSensitivity;
+        scale = Math.max(0.2, scale + delta);
+        updateTransform(false); // instant for wheel
+    } else {
+        // Pan
+        translateX -= event.deltaX;
+        translateY -= event.deltaY;
+        updateTransform(false);
+    }
+  }, { passive: false });
+
+  // Drag to pan
+  modalImg.addEventListener("mousedown", (e) => {
+    e.preventDefault(); // prevent default image drag
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+    modalImg.style.cursor = "grabbing";
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+    updateTransform(false);
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+    modalImg.style.cursor = "grab";
+  });
+  
+  window.addEventListener("mouseleave", () => {
+    isDragging = false;
+    modalImg.style.cursor = "grab";
+  });
+
   setupGigglyOrbit();
   setupGigglyTransformShowcase();
   setupTilekarEmulator();
   setupSS32Schematic();
+  fetchProjectStats();
 });
+
+async function fetchProjectStats() {
+  const projects = [
+    {
+      name: "GigglyCode",
+      repo: "SohamTilekar/GigglyCode",
+      el: document.querySelector(".theme-giggly"),
+    },
+    {
+      name: "TilekarOS",
+      repo: "SohamTilekar/TilekarOS",
+      el: document.querySelector(".theme-tilekar"),
+    },
+    {
+      name: "Berus",
+      repo: "SohamTilekar/berus",
+      el: document.querySelector(".theme-berus"),
+    },
+    {
+      name: "SS32",
+      repo: "SohamTilekar/SS32",
+      el: document.querySelector(".theme-ss32"),
+    },
+    {
+      name: "Friday v2",
+      repo: "SohamTilekar/fridayv2",
+      el: document.querySelector(".theme-friday"),
+    },
+    {
+      name: "VidioPy",
+      repo: "SohamTilekar/vidiopy",
+      el: document.querySelector(".theme-vidiopy"),
+    },
+  ];
+
+  const CACHE_KEY = "github_project_stats_cache";
+  const CACHE_TTL = 3600000; // 1 hour in ms
+
+  const cachedData = localStorage.getItem(CACHE_KEY);
+  if (cachedData) {
+    const { timestamp, data } = JSON.parse(cachedData);
+    if (Date.now() - timestamp < CACHE_TTL) {
+      updateProjectUI(data);
+      return;
+    }
+  }
+
+  const projectStats = {};
+  for (const project of projects) {
+    if (!project.el) continue;
+
+    try {
+      const response = await fetch(
+        `https://api.github.com/repos/${project.repo}`,
+      );
+      const data = await response.json();
+
+      const commitsResponse = await fetch(
+        `https://api.github.com/repos/${project.repo}/commits?per_page=1`,
+      );
+      const linkHeader = commitsResponse.headers.get("Link");
+      let totalCommits = 0;
+      if (linkHeader) {
+        const match = linkHeader.match(/page=(\d+)>; rel="last"/);
+        totalCommits = match ? match[1] : 1;
+      } else {
+        totalCommits = 1;
+      }
+
+      const createdAt = new Date(data.created_at);
+      const now = new Date();
+      const diffTime = Math.abs(now - createdAt);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const stars = data.stargazers_count;
+
+      projectStats[project.repo] = { stars, totalCommits, diffDays };
+
+      updateProjectElement(project.el, projectStats[project.repo]);
+    } catch (error) {
+      console.error(`Error fetching stats for ${project.repo}:`, error);
+    }
+  }
+
+  localStorage.setItem(
+    CACHE_KEY,
+    JSON.stringify({ timestamp: Date.now(), data: projectStats }),
+  );
+}
+
+function updateProjectUI(stats) {
+  const projects = [
+    {
+      name: "GigglyCode",
+      repo: "SohamTilekar/GigglyCode",
+      el: document.querySelector(".theme-giggly"),
+    },
+    {
+      name: "TilekarOS",
+      repo: "SohamTilekar/TilekarOS",
+      el: document.querySelector(".theme-tilekar"),
+    },
+    {
+      name: "Berus",
+      repo: "SohamTilekar/berus",
+      el: document.querySelector(".theme-berus"),
+    },
+    {
+      name: "SS32",
+      repo: "SohamTilekar/SS32",
+      el: document.querySelector(".theme-ss32"),
+    },
+    {
+      name: "Friday v2",
+      repo: "SohamTilekar/fridayv2",
+      el: document.querySelector(".theme-friday"),
+    },
+    {
+      name: "VidioPy",
+      repo: "SohamTilekar/vidiopy",
+      el: document.querySelector(".theme-vidiopy"),
+    },
+  ];
+
+  Object.entries(stats).forEach(([repo, stat]) => {
+    const project = projects.find((p) => p.repo === repo);
+    if (project && project.el) {
+      updateProjectElement(project.el, stat);
+    }
+  });
+}
+
+function updateProjectElement(el, stat) {
+  let statsContainer = el.querySelector(".project-stats");
+  if (!statsContainer) {
+    statsContainer = document.createElement("div");
+    statsContainer.className = "project-stats";
+    el.querySelector(".project-header").appendChild(statsContainer);
+  }
+
+  statsContainer.innerHTML = `
+    <span class="stat-item"><i class="fas fa-code-commit"></i> ${stat.totalCommits} commits</span>
+    ${stat.stars > 8 ? `<span class="stat-item"><i class="fas fa-star"></i> ${stat.stars} stars</span>` : ""}
+    <span class="stat-item"><i class="fas fa-clock"></i> ${stat.diffDays} days ago</span>
+  `;
+}
 
 function setupSS32Schematic() {
   const container = document.querySelector(".ss32-schematic-container");
@@ -133,17 +386,30 @@ function setupSS32Schematic() {
     };
   };
 
-  const getCompRects = () => Array.from(components).map(c => {
-    const r = c.getBoundingClientRect();
-    const cr = container.getBoundingClientRect();
-    return {
-      left: r.left - cr.left - 5,
-      top: r.top - cr.top - 5,
-      right: r.right - cr.left + 5,
-      bottom: r.bottom - cr.top + 5,
-      type: Array.from(c.classList).find(cls => ["pc", "mmu", "alu", "cu", "ram", "reg", "bus", "vga", "intr"].includes(cls))
-    };
-  });
+  const getCompRects = () =>
+    Array.from(components).map((c) => {
+      const r = c.getBoundingClientRect();
+      const cr = container.getBoundingClientRect();
+      return {
+        left: r.left - cr.left - 5,
+        top: r.top - cr.top - 5,
+        right: r.right - cr.left + 5,
+        bottom: r.bottom - cr.top + 5,
+        type: Array.from(c.classList).find((cls) =>
+          [
+            "pc",
+            "mmu",
+            "alu",
+            "cu",
+            "ram",
+            "reg",
+            "bus",
+            "vga",
+            "intr",
+          ].includes(cls),
+        ),
+      };
+    });
 
   const createWire = (sComp, eComp, sPort, ePort, type, id) => {
     const start = getPortPos(sComp, sPort);
@@ -153,19 +419,50 @@ function setupSS32Schematic() {
     // Multi-segment Manhattan routing with component avoidance
     let pathD = `M ${start.x} ${start.y}`;
     const midY = (start.y + end.y) / 2;
-    
-    // Check if direct Z-path is blocked
-    const isPathBlocked = (y1, y2, x1, x2) => rects.some(r => {
-      const srcType = Array.from(sComp.classList).find(cls => ["pc", "mmu", "alu", "cu", "ram", "reg", "bus", "vga", "intr"].includes(cls));
-      const destType = Array.from(eComp.classList).find(cls => ["pc", "mmu", "alu", "cu", "ram", "reg", "bus", "vga", "intr"].includes(cls));
-      if (r.type === srcType || r.type === destType) return false;
-      
-      const xOverlap = (Math.min(x1, x2) < r.right && Math.max(x1, x2) > r.left);
-      const yOverlap = (Math.min(y1, y2) < r.bottom && Math.max(y1, y2) > r.top);
-      return xOverlap && yOverlap;
-    });
 
-    if (isPathBlocked(start.y, midY, start.x, start.x) || isPathBlocked(midY, midY, start.x, end.x) || isPathBlocked(midY, end.y, end.x, end.x)) {
+    // Check if direct Z-path is blocked
+    const isPathBlocked = (y1, y2, x1, x2) =>
+      rects.some((r) => {
+        const srcType = Array.from(sComp.classList).find((cls) =>
+          [
+            "pc",
+            "mmu",
+            "alu",
+            "cu",
+            "ram",
+            "reg",
+            "bus",
+            "vga",
+            "intr",
+          ].includes(cls),
+        );
+        const destType = Array.from(eComp.classList).find((cls) =>
+          [
+            "pc",
+            "mmu",
+            "alu",
+            "cu",
+            "ram",
+            "reg",
+            "bus",
+            "vga",
+            "intr",
+          ].includes(cls),
+        );
+        if (r.type === srcType || r.type === destType) return false;
+
+        const xOverlap =
+          Math.min(x1, x2) < r.right && Math.max(x1, x2) > r.left;
+        const yOverlap =
+          Math.min(y1, y2) < r.bottom && Math.max(y1, y2) > r.top;
+        return xOverlap && yOverlap;
+      });
+
+    if (
+      isPathBlocked(start.y, midY, start.x, start.x) ||
+      isPathBlocked(midY, midY, start.x, end.x) ||
+      isPathBlocked(midY, end.y, end.x, end.x)
+    ) {
       // Try alternative routing (Step around)
       const offset = start.y < end.y ? -45 : 45;
       const bypassY = Math.min(start.y, end.y) + offset;
@@ -179,7 +476,10 @@ function setupSS32Schematic() {
     base.setAttribute("class", `wire-base wire-${type}`);
     svg.appendChild(base);
 
-    const pulse = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    const pulse = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "path",
+    );
     pulse.setAttribute("d", pathD);
     pulse.setAttribute("class", `wire-pulse pulse-${type} wire-id-${id}`);
     pulse.style.display = "none";
@@ -206,7 +506,11 @@ function setupSS32Schematic() {
     svg.innerHTML = "";
     const compMap = {};
     components.forEach((c) => {
-      const type = Array.from(c.classList).find((cls) => ["pc", "mmu", "alu", "cu", "ram", "reg", "bus", "vga", "intr"].includes(cls));
+      const type = Array.from(c.classList).find((cls) =>
+        ["pc", "mmu", "alu", "cu", "ram", "reg", "bus", "vga", "intr"].includes(
+          cls,
+        ),
+      );
       compMap[type] = c;
     });
 
@@ -214,7 +518,14 @@ function setupSS32Schematic() {
       const s = compMap[conn.from];
       const e = compMap[conn.to];
       if (s && e) {
-        createWire(s, e, conn.sP, conn.eP, conn.type, `${conn.from}-${conn.to}`);
+        createWire(
+          s,
+          e,
+          conn.sP,
+          conn.eP,
+          conn.type,
+          `${conn.from}-${conn.to}`,
+        );
       }
     });
   };
@@ -226,7 +537,9 @@ function setupSS32Schematic() {
     const wire = svg.querySelector(`.wire-id-${from}-${to}`);
     if (wire) {
       wire.style.display = "block";
-      setTimeout(() => { wire.style.display = "none"; }, duration);
+      setTimeout(() => {
+        wire.style.display = "none";
+      }, duration);
     }
   };
 
@@ -245,48 +558,70 @@ function setupSS32Schematic() {
   };
 
   const variants = [
-    () => { // Variant 1: Full Fetch Cycle
-      activateNode("pc"); flashWire("pc", "bus");
+    () => {
+      // Variant 1: Full Fetch Cycle
+      activateNode("pc");
+      flashWire("pc", "bus");
       setTimeout(() => {
-        activateNode("bus"); flashWire("bus", "mmu");
+        activateNode("bus");
+        flashWire("bus", "mmu");
         setTimeout(() => {
-          activateNode("mmu"); flashWire("mmu", "ram");
+          activateNode("mmu");
+          flashWire("mmu", "ram");
           setTimeout(() => {
-            activateNode("ram"); flashWire("ram", "bus");
-            setTimeout(() => { activateNode("cu"); flashWire("bus", "cu"); }, 400);
+            activateNode("ram");
+            flashWire("ram", "bus");
+            setTimeout(() => {
+              activateNode("cu");
+              flashWire("bus", "cu");
+            }, 400);
           }, 400);
         }, 400);
       }, 400);
     },
-    () => { // Variant 2: Control & Execution
-      activateNode("cu"); flashWire("cu", "reg");
+    () => {
+      // Variant 2: Control & Execution
+      activateNode("cu");
+      flashWire("cu", "reg");
       flashWire("cu", "alu");
       setTimeout(() => {
-        activateNode("reg"); activateNode("alu");
+        activateNode("reg");
+        activateNode("alu");
         flashWire("reg", "alu");
         setTimeout(() => {
-          activateNode("alu"); flashWire("alu", "reg");
-          setTimeout(() => { activateNode("reg"); flashWire("reg", "bus"); }, 400);
+          activateNode("alu");
+          flashWire("alu", "reg");
+          setTimeout(() => {
+            activateNode("reg");
+            flashWire("reg", "bus");
+          }, 400);
         }, 400);
       }, 400);
     },
-    () => { // Variant 3: Peripheral / VGA Update
-      activateNode("reg"); flashWire("reg", "bus");
+    () => {
+      // Variant 3: Peripheral / VGA Update
+      activateNode("reg");
+      flashWire("reg", "bus");
       setTimeout(() => {
-        activateNode("bus"); flashWire("bus", "vga");
+        activateNode("bus");
+        flashWire("bus", "vga");
         activateNode("vga");
       }, 400);
     },
-    () => { // Variant 4: Interrupt Vectoring
-      activateNode("intr"); flashWire("intr", "cu");
+    () => {
+      // Variant 4: Interrupt Vectoring
+      activateNode("intr");
+      flashWire("intr", "cu");
       setTimeout(() => {
-        activateNode("cu"); flashWire("bus", "cu");
+        activateNode("cu");
+        flashWire("bus", "cu");
         setTimeout(() => {
-          activateNode("bus"); flashWire("bus", "pc");
+          activateNode("bus");
+          flashWire("bus", "pc");
           activateNode("pc");
         }, 400);
       }, 400);
-    }
+    },
   ];
 
   let currentVariant = 0;
@@ -303,9 +638,15 @@ function setupSS32Schematic() {
   components.forEach((comp) => {
     comp.addEventListener("click", (e) => {
       e.stopPropagation();
-      const type = Array.from(comp.classList).find(cls => ["pc", "mmu", "alu", "cu", "ram", "reg", "bus", "vga", "intr"].includes(cls));
+      const type = Array.from(comp.classList).find((cls) =>
+        ["pc", "mmu", "alu", "cu", "ram", "reg", "bus", "vga", "intr"].includes(
+          cls,
+        ),
+      );
       activateNode(type, 1200);
-      connections.filter(c => c.from === type).forEach(c => flashWire(c.from, c.to, 1500));
+      connections
+        .filter((c) => c.from === type)
+        .forEach((c) => flashWire(c.from, c.to, 1500));
     });
   });
 }
@@ -782,8 +1123,7 @@ function setupTilekarEmulator() {
     return start;
   };
 
-  const formatEntry = (name, node) =>
-    node.type === "dir" ? `${name}/` : name;
+  const formatEntry = (name, node) => (node.type === "dir" ? `${name}/` : name);
 
   const refreshPrompt = () => {
     promptPath.textContent = promptText();
