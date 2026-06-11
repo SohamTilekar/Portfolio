@@ -131,7 +131,7 @@ const Home = () => {
                         <ul>
                             <li className="highlighted clickable-skill" data-project="project-berus">Rust (Expert)</li>
                             <li className="highlighted clickable-skill" data-project="project-giggly">C++ / C (Expert)</li>
-                            <li className="clickable-skill" data-project="project-friday">Python (Expert)</li>
+                            <li className="clickable-skill" data-project="project-wardrobe">Python (Expert)</li>
                             <li className="clickable-skill" data-project="project-portfolio">JavaScript (Proficient)</li>
                             <li className="clickable-skill" data-project="project-ss32">Assembly (x86/Custom)</li>
                         </ul>
@@ -154,7 +154,7 @@ const Home = () => {
                             <li className="clickable-skill" data-project="project-portfolio">Git & Version Control</li>
                             <li className="clickable-skill" data-project="project-portfolio">Docker & Containerization</li>
                             <li className="clickable-skill" data-project="project-friday">Agentic AI Architectures</li>
-                            <li className="clickable-skill" data-project="project-friday">Flask & SocketIO</li>
+                            <li className="clickable-skill" data-project="project-wardrobe">FastAPI, Flask & SocketIO</li>
                             <li className="clickable-skill" data-project="project-vidiopy">FFmpeg / VidioPy</li>
                         </ul>
                     </div>
@@ -548,6 +548,48 @@ const Home = () => {
 
                         <a
                             href="https://github.com/SohamTilekar/SS32"
+                            target="_blank" rel="noreferrer"
+                            className="view-project"
+                            ><i className="fab fa-github"></i> View Source &rarr;</a
+                        >
+                    </div>
+
+                    <div className="project-card glass-card theme-wardrobe hidden-project" id="project-wardrobe" style={{ display: 'none' }}>
+                        <div className="card-halo" aria-hidden="true"></div>
+                        <div className="project-header">
+                            <div className="header-top">
+                                <span className="tech-tag">Python | FastAPI | React</span>
+                                <h3>Wardrobe AI</h3>
+                            </div>
+                        </div>
+                        <p className="project-desc">
+                            A <strong>smart, local-first styling coordinator</strong> that digitizes clothing inventory, tracks laundry cycles, and generates <strong>personalized, scenario-based outfit recommendations</strong>.
+                        </p>
+                        <div className="project-details">
+                            <div className="detail-group feature-group">
+                                <h4>✨ Key Features</h4>
+                                <ul>
+                                    <li>
+                                        <strong>Styling Engine:</strong>
+                                        Evaluates combinations across <strong>5 scenario-based destinations</strong> using structural fashion principles.
+                                    </li>
+                                    <li>
+                                        <strong>Cycle Tracking:</strong>
+                                        Automates laundry alerts by logging <strong>wear history</strong>, <strong>dirt levels</strong>, and <strong>wash statuses</strong>.
+                                    </li>
+                                    <li>
+                                        <strong>Local & Private:</strong>
+                                        High-performance <strong>FastAPI backend</strong> with <strong>local JSON storage</strong> for total data privacy.
+                                    </li>
+                                    <li>
+                                        <strong>Smart Rotation:</strong>
+                                        Biased recommendation algorithm to promote <strong>natural rotation</strong> and prevent "unworn item" fatigue.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a
+                            href="https://github.com/SohamTilekar/Wardrobe-AI"
                             target="_blank" rel="noreferrer"
                             className="view-project"
                             ><i className="fab fa-github"></i> View Source &rarr;</a

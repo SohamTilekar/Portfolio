@@ -361,6 +361,11 @@ export function initPortfolio() {
   async function fetchProjectStats() {
     const projects = [
       {
+        name: "Wardrobe AI",
+        repo: "SohamTilekar/Wardrobe-AI",
+        el: document.querySelector(".theme-wardrobe"),
+      },
+      {
         name: "GigglyCode",
         repo: "SohamTilekar/GigglyCode",
         el: document.querySelector(".theme-giggly"),
@@ -443,6 +448,10 @@ export function initPortfolio() {
 
   function updateProjectUI(stats) {
     const projects = [
+      {
+        repo: "SohamTilekar/Wardrobe-AI",
+        el: document.querySelector(".theme-wardrobe"),
+      },
       {
         repo: "SohamTilekar/Portfolio",
         el: document.querySelector(".theme-portfolio"),
