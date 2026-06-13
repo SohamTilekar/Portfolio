@@ -8,121 +8,82 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="resume-container">
+    <div class="resume-container" style="max-width: 800px; margin: 40px auto; background-color: var(--bg-color); padding: 40px 50px; font-size: 13.5px; line-height: 1.5;">
+        
         <!-- HEADER -->
-        <header class="header" style="justify-content: center; text-align: center; border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 20px;">
-            <div class="header-content" style="width: 100%;">
-                <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 5px; color: var(--text-main);">Soham Tilekar</h1>
-                <p class="subtitle" style="font-size: 16px; color: var(--primary); font-weight: 600; margin-bottom: 10px;">Core Java Developer | Backend Engineer</p>
-                <div class="contact-info" style="justify-content: center; font-size: 12px; gap: 8px; color: var(--text-muted);">
-                    <a href="mailto:sohamtilekar233@gmail.com" style="color: var(--text-muted); text-decoration: none;">sohamtilekar233@gmail.com</a> | 
-                    <a href="https://github.com/SohamTilekar" target="_blank" style="color: var(--text-muted); text-decoration: none;">github.com/SohamTilekar</a> | 
-                    <a href="https://www.linkedin.com/in/soham-tilekar" target="_blank" style="color: var(--text-muted); text-decoration: none;">linkedin.com/in/soham-tilekar</a> | 
-                    <a href="https://sohamtilekar.github.io/Portfolio?from=java" target="_blank" style="color: var(--text-muted); text-decoration: none;">sohamtilekar.github.io/Portfolio</a> | 
-                    <span>Pune, India</span>
-                </div>
+        <header class="header" style="text-align: center; border-bottom: none; margin-bottom: 25px; padding-bottom: 0; display: block;">
+            <h1 style="font-size: 26px; font-weight: 700; margin-bottom: 6px; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2;">Soham Tilekar</h1>
+            <p style="font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Core Java Developer</p>
+            <div style="font-size: 12px; color: var(--text-muted); display: block;">
+                sohamtilekar233@gmail.com | Pune, India | 
+                <a href="https://github.com/SohamTilekar" target="_blank" style="color: var(--text-muted); text-decoration: none;">github.com/SohamTilekar</a> | 
+                <a href="https://www.linkedin.com/in/soham-tilekar" target="_blank" style="color: var(--text-muted); text-decoration: none;">linkedin.com/in/soham-tilekar</a> | 
+                <a href="https://sohamtilekar.github.io/Portfolio?from=java" target="_blank" style="color: var(--text-muted); text-decoration: none;">sohamtilekar.github.io/Portfolio</a>
             </div>
         </header>
 
-        <!-- SUMMARY -->
-        <section class="section" style="margin-bottom: 20px;">
-            <h2 class="section-title" style="font-size: 14px; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 8px; text-transform: uppercase;">Professional Summary</h2>
-            <p class="summary-text" style="font-size: 13px; color: var(--text-muted); line-height: 1.6; text-align: justify;">
-                Systems-focused Core Java Developer with deep expertise in building high-performance, zero-dependency backend architectures from scratch. Proficient in multithreading, concurrent request handling, custom JVM sandboxing, process execution management, and low-level cryptographic protocols. Strong understanding of object-oriented design patterns, memory optimization strategies, and standard developer tooling. Seeking a Core Java Development Internship to contribute backend engineering skills to production systems.
-            </p>
-        </section>
-
-        <!-- TECHNICAL SKILLS -->
-        <section class="section" style="margin-bottom: 20px;">
-            <h2 class="section-title" style="font-size: 14px; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 8px; text-transform: uppercase;">Technical Skills</h2>
-            <div class="skills-body" style="font-size: 13px; line-height: 1.6; color: var(--text-muted);">
-                <p style="margin-bottom: 4px;"><strong>Languages:</strong> Core Java 17/21 (Expert), Rust, C++, JavaScript, HTML5, CSS3</p>
-                <p style="margin-bottom: 4px;"><strong>Backend & Systems:</strong> Multithreading, Concurrency, Network Socket Programming, HTTP, JVM Sandboxing, ProcessBuilder, Custom Disk Serialization, OOP Design, Data Structures</p>
-                <p style="margin-bottom: 0;"><strong>Tools & Security:</strong> Maven, Git/GitHub, Docker, Cryptography (AES, PBKDF2)</p>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section class="section projects-section" style="margin-bottom: 20px;">
-            <h2 class="section-title" style="font-size: 14px; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 8px; text-transform: uppercase;">Selected Projects</h2>
+        <!-- SELECTED PROJECTS -->
+        <section class="section" style="margin-bottom: 25px;">
+            <h2 class="section-title" style="font-size: 14px; font-weight: 700; border-bottom: 1.5px solid var(--text-main); padding-bottom: 3px; margin-bottom: 12px; text-transform: uppercase; color: var(--text-main); letter-spacing: 0.5px;">Selected Projects</h2>
             
-            <!-- JPassMan -->
-            <div class="project-item" id="project-jpassman" style="margin-bottom: 18px;">
-                <div class="project-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 6px;">
-                    <div class="project-title-row" style="display: flex; align-items: baseline; gap: 8px;">
-                        <h3 style="font-size: 15px; font-weight: 700; margin: 0; color: var(--text-main);">JPassMan</h3>
-                        <span class="project-tech" style="font-size: 11px; color: var(--primary); font-family: var(--font-mono);">Java 17, Maven, Cryptography</span>
-                    </div>
-                    <a href="https://github.com/SohamTilekar/JPassMan" target="_blank" class="project-link" style="font-size: 12px; color: var(--text-muted); text-decoration: none; font-family: var(--font-mono);">github.com/SohamTilekar/JPassMan</a>
+            <!-- Code Arena -->
+            <div class="project-item" style="margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 13.5px; color: var(--text-main); margin-bottom: 4px;">
+                    <span>Code Arena | Java 17, Vanilla JS, Docker, Monaco</span>
+                    <span style="font-family: var(--font-mono); font-size: 12px; font-weight: normal;"><a href="https://github.com/SohamTilekar/CodeArena" target="_blank" style="color: var(--primary); text-decoration: none;">github.com/SohamTilekar/CodeArena</a></span>
                 </div>
-                <div class="project-content-with-image" style="display: flex; gap: 15px; align-items: flex-start;">
-                    <div class="project-text" style="flex: 1;">
-                        <p class="project-desc" style="font-size: 13px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.5;">An offline-first, zero-dependency password manager that removes external library vulnerabilities.</p>
-                        <ul class="project-bullets" style="font-size: 12.5px; color: var(--text-muted); padding-left: 15px; margin: 0; line-height: 1.5;">
-                            <li style="margin-bottom: 4px;">Implemented cryptographic storage using <code>AES/GCM/NoPadding</code> and <code>PBKDF2WithHmacSHA256</code> (65,536 iterations) with unique IVs for robust offline security.</li>
-                            <li style="margin-bottom: 4px;">Engineered an interactive, mouse-clickable and keyboard-navigable Terminal User Interface (TUI) utilizing SGR Mouse tracking and ANSI escape sequences.</li>
-                            <li style="margin-bottom: 0;">Enforced memory safety by actively overwriting and zeroing out master password character arrays immediately after key derivation.</li>
-                        </ul>
-                    </div>
-                    <img src="../asserts/JPassMan_Homescreen.png" alt="JPassMan UI" class="project-image inline-img" style="width: 260px; border-radius: 4px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                </div>
+                <ul style="padding-left: 20px; margin: 0; color: var(--text-muted); list-style-type: disc;">
+                    <li style="margin-bottom: 3px;">Engineered a zero-dependency real-time multiplayer competitive programming platform featuring 1v1 code duels and an algorithmic Elo ranking system.</li>
+                    <li style="margin-bottom: 3px;">Developed a custom HTTP server utilizing the native <code>com.sun.net.httpserver</code> package to handle backend routing, JSON parsing, and session-token validation.</li>
+                    <li style="margin-bottom: 3px;">Configured a custom <code>FixedThreadPool</code> executor to seamlessly handle highly concurrent matchmaking requests and session authentication.</li>
+                    <li style="margin-bottom: 0;">Built secure, isolated sandbox execution processes using <code>ProcessBuilder</code>, strictly enforcing JVM memory limits (<code>-Xmx64m</code>) and I/O restrictions to prevent sandbox escapes.</li>
+                </ul>
             </div>
 
-            <!-- Code Arena -->
-            <div class="project-item" id="project-codearena" style="margin-bottom: 18px;">
-                <div class="project-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 6px;">
-                    <div class="project-title-row" style="display: flex; align-items: baseline; gap: 8px;">
-                        <h3 style="font-size: 15px; font-weight: 700; margin: 0; color: var(--text-main);">Code Arena</h3>
-                        <span class="project-tech" style="font-size: 11px; color: var(--primary); font-family: var(--font-mono);">Java 17, Vanilla JS, Docker, Monaco</span>
-                    </div>
-                    <a href="https://github.com/SohamTilekar/CodeArena" target="_blank" class="project-link" style="font-size: 12px; color: var(--text-muted); text-decoration: none; font-family: var(--font-mono);">github.com/SohamTilekar/CodeArena</a>
+            <!-- JPassMan -->
+            <div class="project-item" style="margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 13.5px; color: var(--text-main); margin-bottom: 4px;">
+                    <span>JPassMan | Java 17, Maven, Cryptography</span>
+                    <span style="font-family: var(--font-mono); font-size: 12px; font-weight: normal;"><a href="https://github.com/SohamTilekar/JPassMan" target="_blank" style="color: var(--primary); text-decoration: none;">github.com/SohamTilekar/JPassMan</a></span>
                 </div>
-                <div class="project-content-with-image" style="display: flex; gap: 15px; align-items: flex-start;">
-                    <div class="project-text" style="flex: 1;">
-                        <p class="project-desc" style="font-size: 13px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.5;">A zero-dependency real-time multiplayer competitive programming platform featuring matchmaking duels and secure code execution.</p>
-                        <ul class="project-bullets" style="font-size: 12.5px; color: var(--text-muted); padding-left: 15px; margin: 0; line-height: 1.5;">
-                            <li style="margin-bottom: 4px;">Built a custom HTTP server from scratch using Java's native <code>com.sun.net.httpserver</code> package to handle routing, session authentication, and JSON parsing.</li>
-                            <li style="margin-bottom: 4px;">Configured a <code>FixedThreadPool</code> executor service to manage concurrent matchmaking queues, active duel threads, and session tracking.</li>
-                            <li style="margin-bottom: 0;">Implemented isolated code execution by spawning sandboxed JVM processes via <code>ProcessBuilder</code> with memory limits (<code>-Xmx64m</code>) and timeouts.</li>
-                        </ul>
-                    </div>
-                    <div class="project-images-col" style="display: flex; flex-direction: column; gap: 6px;">
-                        <img src="../asserts/Solo Arena.png" alt="Solo Arena" class="project-image stacked-img" style="width: 150px; border-radius: 4px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                        <img src="../asserts/1v1.png" alt="1v1 Duel" class="project-image stacked-img" style="width: 150px; border-radius: 4px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                    </div>
-                </div>
+                <ul style="padding-left: 20px; margin: 0; color: var(--text-muted); list-style-type: disc;">
+                    <li style="margin-bottom: 3px;">Designed a zero-dependency, offline-first Password Manager with a fully interactive Terminal User Interface (TUI) using ANSI escape codes and SGR mouse tracking.</li>
+                    <li style="margin-bottom: 3px;">Implemented production-grade cryptography for secure credential storage, utilizing <code>AES/GCM/NoPadding</code> with a <code>PBKDF2WithHmacSHA256</code> key derivation function.</li>
+                    <li style="margin-bottom: 0;">Enforced strict memory safety protocols by programming the data flow to overwrite and wipe master password character arrays immediately after key derivation.</li>
+                </ul>
             </div>
 
             <!-- GigglyCode -->
-            <div class="project-item" id="project-gigglycode" style="margin-bottom: 0;">
-                <div class="project-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 6px;">
-                    <div class="project-title-row" style="display: flex; align-items: baseline; gap: 8px;">
-                        <h3 style="font-size: 15px; font-weight: 700; margin: 0; color: var(--text-main);">GigglyCode Compiler</h3>
-                        <span class="project-tech" style="font-size: 11px; color: var(--primary); font-family: var(--font-mono);">C++, LLVM 17</span>
-                    </div>
-                    <a href="https://github.com/SohamTilekar/GigglyCode" target="_blank" class="project-link" style="font-size: 12px; color: var(--text-muted); text-decoration: none; font-family: var(--font-mono);">github.com/SohamTilekar/GigglyCode</a>
+            <div class="project-item" style="margin-bottom: 0;">
+                <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 13.5px; color: var(--text-main); margin-bottom: 4px;">
+                    <span>GigglyCode Compiler | C++, LLVM 17</span>
+                    <span style="font-family: var(--font-mono); font-size: 12px; font-weight: normal;"><a href="https://github.com/SohamTilekar/GigglyCode" target="_blank" style="color: var(--primary); text-decoration: none;">github.com/SohamTilekar/GigglyCode</a></span>
                 </div>
-                <div class="project-text">
-                    <p class="project-desc" style="font-size: 13px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.5;">A compiled programming language engineered to compile custom structures directly into machine code.</p>
-                    <ul class="project-bullets" style="font-size: 12.5px; color: var(--text-muted); padding-left: 15px; margin: 0; line-height: 1.5;">
-                        <li style="margin-bottom: 4px;">Programmed the compiler frontend including a Lexical Analyzer, AST Parser, Type Checker, and Scope Analyzer.</li>
-                        <li style="margin-bottom: 0;">Generated Intermediate Representation (IR) files using the LLVM 17 C++ API and optimized binary outputs using LLVM optimization passes.</li>
-                    </ul>
-                </div>
+                <ul style="padding-left: 20px; margin: 0; color: var(--text-muted); list-style-type: disc;">
+                    <li style="margin-bottom: 3px;">Engineered a compiled programming language designed to combine systems-level control with pythonic syntax.</li>
+                    <li style="margin-bottom: 0;">Programmed the entire frontend compiler flow from scratch, including the Lexer, Parser, AST representation, and LLVM Code Generation.</li>
+                </ul>
             </div>
         </section>
 
         <!-- EDUCATION -->
-        <section class="section" style="margin-bottom: 0;">
-            <h2 class="section-title" style="font-size: 14px; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 8px; text-transform: uppercase;">Education</h2>
-            <div class="education-item" style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 13px;">
-                <div>
-                    <h3 style="font-size: 14px; font-weight: 700; color: var(--text-main); margin: 0 0 2px 0;">Bachelor of Technology in Computer Science Engineering</h3>
-                    <p class="edu-school" style="color: var(--text-muted); margin: 0 0 2px 0;">Pimpri Chinchwad University, Pune</p>
-                    <p class="edu-gpa" style="color: var(--text-muted); margin: 0;">CGPA: 7.95</p>
-                </div>
-                <p class="edu-date" style="margin: 0; font-size: 12px; color: var(--text-muted);">August 2024 – July 2028 (3rd Semester)</p>
+        <section class="section" style="margin-bottom: 25px;">
+            <h2 class="section-title" style="font-size: 14px; font-weight: 700; border-bottom: 1.5px solid var(--text-main); padding-bottom: 3px; margin-bottom: 12px; text-transform: uppercase; color: var(--text-main); letter-spacing: 0.5px;">Education</h2>
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px; color: var(--text-main); font-weight: 600; margin-bottom: 4px;">
+                <span>Pimpri Chinchwad University - Bachelor of Technology in Computer Science Engineering | Pune, India</span>
+                <span style="font-weight: normal; color: var(--text-muted); font-size: 12.5px;">August 2024 – July 2028</span>
             </div>
+            <div style="color: var(--text-muted); font-size: 13px;">
+                Current Semester: 3rd Semester | First Year CGPA: 7.95
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section" style="margin-bottom: 0;">
+            <h2 class="section-title" style="font-size: 14px; font-weight: 700; border-bottom: 1.5px solid var(--text-main); padding-bottom: 3px; margin-bottom: 12px; text-transform: uppercase; color: var(--text-main); letter-spacing: 0.5px;">Skills</h2>
+            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; word-spacing: 1px;">
+                Core Java 17/21; Multithreading & Concurrency; Network Socket Programming; HTTP; JVM Sandboxing; Cryptography (AES, PBKDF2); Maven; Git/GitHub; Docker; Rust; C++; Vanilla JS; HTML5; CSS3; OOP Design; Data Structures.
+            </p>
         </section>
 
     </div>
