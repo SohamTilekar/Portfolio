@@ -29,39 +29,42 @@
             <!-- Code Arena -->
             <div class="project-item" style="margin-bottom: 16px;">
                 <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 13.5px; color: var(--text-main); margin-bottom: 4px;">
-                    <span>Code Arena | Java 17, Vanilla JS, Docker, Monaco</span>
+                    <span>Code Arena</span>
                     <span style="font-family: var(--font-mono); font-size: 12px; font-weight: normal;"><a href="https://github.com/SohamTilekar/CodeArena" target="_blank" style="color: var(--primary); text-decoration: none;">github.com/SohamTilekar/CodeArena</a></span>
                 </div>
                 <ul style="padding-left: 20px; margin: 0; color: var(--text-muted); list-style-type: disc;">
-                    <li style="margin-bottom: 3px;">Engineered a zero-dependency real-time multiplayer competitive programming platform featuring 1v1 code duels and an algorithmic Elo ranking system.</li>
-                    <li style="margin-bottom: 3px;">Developed a custom HTTP server utilizing the native <code>com.sun.net.httpserver</code> package to handle backend routing, JSON parsing, and session-token validation.</li>
-                    <li style="margin-bottom: 3px;">Configured a custom <code>FixedThreadPool</code> executor to seamlessly handle highly concurrent matchmaking requests and session authentication.</li>
-                    <li style="margin-bottom: 0;">Built secure, isolated sandbox execution processes using <code>ProcessBuilder</code>, strictly enforcing JVM memory limits (<code>-Xmx64m</code>) and I/O restrictions to prevent sandbox escapes.</li>
+                    <li style="margin-bottom: 3px;">Engineered a <strong>zero-dependency</strong> real-time multiplayer competitive programming platform featuring <strong>1v1 code duels</strong> and an algorithmic <strong>Elo ranking system</strong>.</li>
+                    <li style="margin-bottom: 3px;">Developed a custom HTTP server utilizing the native <strong>com.sun.net.httpserver</strong> package to handle backend routing, JSON parsing, and session-token validation.</li>
+                    <li style="margin-bottom: 3px;">Configured a custom <strong>FixedThreadPool</strong> executor to handle concurrent matchmaking requests, duel threads, and session lifetimes.</li>
+                    <li style="margin-bottom: 3px;">Built secure, isolated sandbox execution processes using <strong>ProcessBuilder</strong>, enforcing JVM memory limits (<strong>-Xmx64m</strong>) and I/O restrictions to prevent escapes.</li>
+                    <li style="margin-top: 4px; list-style-type: none; font-size: 12px; color: var(--text-main); margin-left: -20px;"><strong>Technologies Used:</strong> Java 17, Socket Programming, Multithreading, Process Isolation, HTML5/CSS3, Vanilla JS, Monaco Editor, Docker.</li>
                 </ul>
             </div>
 
             <!-- JPassMan -->
             <div class="project-item" style="margin-bottom: 16px;">
                 <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 13.5px; color: var(--text-main); margin-bottom: 4px;">
-                    <span>JPassMan | Java 17, Maven, Cryptography</span>
+                    <span>JPassMan</span>
                     <span style="font-family: var(--font-mono); font-size: 12px; font-weight: normal;"><a href="https://github.com/SohamTilekar/JPassMan" target="_blank" style="color: var(--primary); text-decoration: none;">github.com/SohamTilekar/JPassMan</a></span>
                 </div>
                 <ul style="padding-left: 20px; margin: 0; color: var(--text-muted); list-style-type: disc;">
-                    <li style="margin-bottom: 3px;">Designed a zero-dependency, offline-first Password Manager with a fully interactive Terminal User Interface (TUI) using ANSI escape codes and SGR mouse tracking.</li>
-                    <li style="margin-bottom: 3px;">Implemented production-grade cryptography for secure credential storage, utilizing <code>AES/GCM/NoPadding</code> with a <code>PBKDF2WithHmacSHA256</code> key derivation function.</li>
-                    <li style="margin-bottom: 0;">Enforced strict memory safety protocols by programming the data flow to overwrite and wipe master password character arrays immediately after key derivation.</li>
+                    <li style="margin-bottom: 3px;">Designed a <strong>zero-dependency</strong>, offline-first Password Manager with a fully interactive Terminal User Interface (TUI) using <strong>ANSI escape codes</strong> and <strong>SGR mouse tracking</strong>.</li>
+                    <li style="margin-bottom: 3px;">Implemented production-grade cryptography for secure credential storage, utilizing <strong>AES/GCM/NoPadding</strong> with a <strong>PBKDF2WithHmacSHA256</strong> key derivation function.</li>
+                    <li style="margin-bottom: 3px;">Enforced strict memory safety protocols by programming the data flow to overwrite and wipe <strong>master password character arrays</strong> immediately after key derivation.</li>
+                    <li style="margin-top: 4px; list-style-type: none; font-size: 12px; color: var(--text-main); margin-left: -20px;"><strong>Technologies Used:</strong> Java 17, Maven, Cryptography (AES, GCM, PBKDF2), Terminal UIs, ANSI Escape Codes, Memory Safety.</li>
                 </ul>
             </div>
 
             <!-- GigglyCode -->
             <div class="project-item" style="margin-bottom: 0;">
                 <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 13.5px; color: var(--text-main); margin-bottom: 4px;">
-                    <span>GigglyCode Compiler | C++, LLVM 17</span>
+                    <span>GigglyCode Compiler</span>
                     <span style="font-family: var(--font-mono); font-size: 12px; font-weight: normal;"><a href="https://github.com/SohamTilekar/GigglyCode" target="_blank" style="color: var(--primary); text-decoration: none;">github.com/SohamTilekar/GigglyCode</a></span>
                 </div>
                 <ul style="padding-left: 20px; margin: 0; color: var(--text-muted); list-style-type: disc;">
                     <li style="margin-bottom: 3px;">Engineered a compiled programming language designed to combine systems-level control with pythonic syntax.</li>
-                    <li style="margin-bottom: 0;">Programmed the entire frontend compiler flow from scratch, including the Lexer, Parser, AST representation, and LLVM Code Generation.</li>
+                    <li style="margin-bottom: 3px;">Programmed the entire compiler pipeline from scratch, including the <strong>Lexer</strong>, <strong>Parser</strong>, <strong>AST representation</strong>, and <strong>LLVM Code Generation</strong> using the LLVM C++ API.</li>
+                    <li style="margin-top: 4px; list-style-type: none; font-size: 12px; color: var(--text-main); margin-left: -20px;"><strong>Technologies Used:</strong> C++, LLVM 17, Compiler Engineering, Abstract Syntax Trees (AST), Code Optimization.</li>
                 </ul>
             </div>
         </section>
