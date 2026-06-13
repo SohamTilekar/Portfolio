@@ -73,17 +73,17 @@
                     </div>
                     <a href="https://github.com/SohamTilekar/JPassMan" target="_blank" class="project-link">github.com/SohamTilekar/JPassMan</a>
                 </div>
-                <div class="project-content-with-image">
-                    <div class="project-text">
-                        <p class="project-desc">A <strong>zero-dependency, offline-first Password Manager</strong> featuring a complete interactive Terminal User Interface (TUI) and production-grade security.</p>
+                <div class="project-text">
+                        <div class="project-content-with-image">
+                            <p class="project-desc">A <strong>zero-dependency, offline-first Password Manager</strong> featuring a complete interactive Terminal User Interface (TUI) and production-grade security.</p>
+                            <img src="../asserts/JPassMan_Homescreen.png" alt="JPassMan UI" class="project-image inline-img" style="width: 380px;">
+                        </div>
                         <ul class="project-bullets">
                             <li><strong>Robust Cryptography:</strong> Implemented secure credential storage using <code>AES/GCM/NoPadding</code> with a <code>PBKDF2WithHmacSHA256</code> key derivation function (65,536 iterations, 16-byte random salt, unique 12-byte IVs).</li>
                             <li><strong>Interactive Terminal UI:</strong> Programmed a mouse-clickable and keyboard-navigable terminal interface (ANSI escape codes, SGR Mouse tracking, true tab-focus buttons, list navigation).</li>
                             <li><strong>Memory Safety:</strong> Explicitly designed data flow to overwrite/wipe master password char arrays immediately after key derivation to prevent memory extraction attacks.</li>
                             <li><strong>Standard Tooling:</strong> Packaged via Maven standard file structures, enabling native execution script wrappers and clean isolated profile databases (<code>.db</code> files).</li>
                         </ul>
-                    </div>
-                    <img src="../asserts/JPassMan_Homescreen.png" alt="JPassMan UI" class="project-image inline-img">
                 </div>
             </div>
 
