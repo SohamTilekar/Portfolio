@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Tilekar - Core Java Developer Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="print-notice">
+        <span>🌟 For the best interactive experience and animated showcases, please visit:</span>
+        <a href="../?from=java" target="_blank">https://sohamtilekar.github.io/Portfolio</a>
+    </div>
+
+    <div class="resume-container">
+        
+        <!-- CALL TO ACTION (Visible in Print) -->
+        <div class="portfolio-cta">
+            <p>🌐 <strong>Note to Reader:</strong> Kindly visit <a href="../?from=java" target="_blank">https://sohamtilekar.github.io/Portfolio</a> for an interactive and even better project showcase after reading this resume.</p>
+        </div>
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Soham Tilekar 👨‍💻</h1>
+                <p class="subtitle">🚀 Core Java Developer | Backend Engineer</p>
+                <div class="contact-info">
+                    <a href="mailto:sohamtilekar233@gmail.com"><i class="fas fa-envelope"></i> sohamtilekar233@gmail.com</a>
+                    <a href="https://github.com/SohamTilekar" target="_blank"><i class="fab fa-github"></i> github.com/SohamTilekar</a>
+                    <a href="https://www.linkedin.com/in/soham-tilekar" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/soham-tilekar</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Pune, India 🇮🇳</span>
+                </div>
+            </div>
+            <img src="../asserts/PFP.png" alt="Soham Tilekar" class="profile-pic">
+        </header>
+
+        <!-- TECHNICAL SKILLS -->
+        <section class="section">
+            <h2 class="section-title">🛠️ Technical Skills</h2>
+            <div class="skills-tags-container">
+                <a href="#project-codearena" class="skill-tag highlighted"><i class="fab fa-java"></i> Core Java 17/21</a>
+                <a href="#project-codearena" class="skill-tag highlighted"><i class="fas fa-network-wired"></i> Multithreading & Concurrency</a>
+                <a href="#project-codearena" class="skill-tag"><i class="fas fa-ethernet"></i> Network Socket Programming</a>
+                <a href="#project-jpassman" class="skill-tag"><i class="fas fa-key"></i> Cryptography (AES, PBKDF2)</a>
+                <a href="#project-codearena" class="skill-tag highlighted"><i class="fab fa-docker"></i> JVM Sandboxing / Docker</a>
+                <span class="skill-tag"><i class="fab fa-git-alt"></i> Git/GitHub</span>
+                <span class="skill-tag"><i class="fas fa-tools"></i> Maven</span>
+                <span class="skill-tag"><i class="fab fa-rust"></i> Rust</span>
+                <span class="skill-tag"><i class="fas fa-code"></i> C++</span>
+                <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="skill-tag"><i class="fab fa-html5"></i> HTML5 / CSS3</span>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section projects-section">
+            <h2 class="section-title">⭐ Selected Projects</h2>
+            
+            <!-- Code Arena -->
+            <div class="project-item" id="project-codearena">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h3><i class="fas fa-code-branch"></i> Code Arena</h3>
+                        <span class="project-tech">Java 17 | Socket Programming | Docker</span>
+                    </div>
+                    <a href="https://github.com/SohamTilekar/CodeArena" target="_blank" class="project-link">github.com/SohamTilekar/CodeArena</a>
+                </div>
+                <div class="project-content-with-image">
+                    <div class="project-text">
+                        <p class="project-desc">Developed a <strong>real-time multiplayer competitive programming platform</strong> featuring <strong>1v1 code duels</strong> and an algorithmic <strong>Elo ranking system</strong>. ⚔️</p>
+                        <ul class="project-bullets">
+                            <li>Developed a custom HTTP server utilizing the native <strong>com.sun.net.httpserver</strong> package to handle backend routing, JSON parsing, and session-token validation.</li>
+                            <li>Configured a custom <strong>FixedThreadPool</strong> executor to handle concurrent matchmaking requests, duel threads, and session lifetimes.</li>
+                            <li>Built secure, isolated sandbox execution processes using <strong>ProcessBuilder</strong>, enforcing JVM memory limits (<strong>-Xmx64m</strong>) and I/O restrictions to prevent escapes.</li>
+                            <li><strong>Technologies Used:</strong> Java 17, Socket Programming, Multithreading, Process Isolation, HTML5/CSS3, Vanilla JS, Monaco Editor, Docker.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JPassMan -->
+            <div class="project-item" id="project-jpassman">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h3><i class="fas fa-lock"></i> JPassMan</h3>
+                        <span class="project-tech">Java 17 | Cryptography | ANSI TUI</span>
+                    </div>
+                    <a href="https://github.com/SohamTilekar/JPassMan" target="_blank" class="project-link">github.com/SohamTilekar/JPassMan</a>
+                </div>
+                <div class="project-content-with-image">
+                    <div class="project-text">
+                        <p class="project-desc">Designed an <strong>offline-first Password Manager</strong> with a fully interactive <strong>Terminal User Interface (TUI)</strong> using <strong>ANSI escape codes</strong> and <strong>SGR mouse tracking</strong>. 🔑</p>
+                        <ul class="project-bullets">
+                            <li>Implemented production-grade cryptography for secure credential storage, utilizing <strong>AES/GCM/NoPadding</strong> with a <strong>PBKDF2WithHmacSHA256</strong> key derivation function.</li>
+                            <li>Enforced strict memory safety protocols by programming the data flow to overwrite and wipe <strong>master password character arrays</strong> immediately after key derivation.</li>
+                            <li><strong>Technologies Used:</strong> Java 17, Maven, Cryptography (AES, GCM, PBKDF2), Terminal UIs, ANSI Escape Codes, Memory Safety.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GigglyCode -->
+            <div class="project-item" id="project-gigglycode">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h3><i class="fas fa-terminal"></i> GigglyCode Compiler</h3>
+                        <span class="project-tech">C++ | LLVM 17+</span>
+                    </div>
+                    <a href="https://github.com/SohamTilekar/GigglyCode" target="_blank" class="project-link">github.com/SohamTilekar/GigglyCode</a>
+                </div>
+                <div class="project-content-with-image">
+                    <div class="project-text">
+                        <p class="project-desc">Engineered a <strong>compiled programming language</strong> designed to combine systems-level performance with a clean, pythonic syntax. ⚡</p>
+                        <ul class="project-bullets">
+                            <li>Programmed the entire compiler pipeline from scratch, including the <strong>Lexer</strong>, <strong>Parser</strong>, <strong>AST representation</strong>, and <strong>LLVM Code Generation</strong> using the LLVM C++ API.</li>
+                            <li><strong>Technologies Used:</strong> C++, LLVM 17, Compiler Engineering, Abstract Syntax Trees (AST), Code Optimization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 25px; padding: 15px; background-color: var(--bg-alt); border-radius: 6px; border: 1px dashed var(--border);">
+                <p style="margin: 0; color: var(--text-muted); font-size: 14px;"><strong>Note:</strong> Additional projects are available on my <a href="https://github.com/SohamTilekar" style="color: var(--primary); text-decoration: underline;" target="_blank">GitHub Profile</a>.</p>
+            </div>
+        </section>
+
+        <!-- EDUCATION & OTHER DETAILS -->
+        <div class="bottom-sections">
+            <section class="section half-width">
+                <h2 class="section-title">🌍 Professional Profile</h2>
+                <p class="summary-text">
+                    Focused backend developer specializing in systems architecture and robust Java implementations. Dedicated to writing clean, zero-dependency, and highly performant applications while applying modern computer science principles like concurrency, memory safety, and secure cryptography.
+                </p>
+            </section>
+
+            <section class="section half-width">
+                <h2 class="section-title">🎓 Education</h2>
+                <div class="education-item">
+                    <h3>B.Tech in Computer Science Engineering</h3>
+                    <p class="edu-school"><i class="fas fa-university"></i> Pimpri Chinchwad University, Pune</p>
+                    <p class="edu-date"><i class="far fa-calendar-alt"></i> August 2025 - July 2029 (3rd Semester)</p>
+                    <p class="edu-gpa" style="margin-top: 6px; color: var(--text-main); font-weight: 500;"><i class="fas fa-graduation-cap"></i> First Year CGPA: 8.00</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- CALL TO ACTION (Visible in Print) -->
+        <div class="portfolio-cta">
+            <p>🌐 <strong>Note to Reader:</strong> Kindly visit <a href="../?from=java" target="_blank">https://sohamtilekar.github.io/Portfolio</a> for an interactive and even better project showcase after reading this resume.</p>
+        </div>
+
+    </div>
+</body>
+</html>

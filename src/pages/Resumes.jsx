@@ -18,7 +18,8 @@ const Resumes = () => {
                 <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>Tailored specifically for Core Java Internships, highlighting multi-threading, custom HTTP servers, JVM sandboxing, process execution, and cryptographic security.</p>
             </div>
             <div className="resume-actions" style={{ display: 'flex', gap: '15px' }}>
-                <a href="Resume-Java-Internship/index.html" className="resume-btn btn-view" style={{ padding: '10px 20px', borderRadius: '6px', fontSize: '0.85rem', fontWeight: '600', textDecoration: 'none', transition: 'all 0.3s', background: 'var(--accent-primary)', color: 'var(--bg-color)' }}>View Online</a>
+                <a href="Resume-Java-Internship/index.html" className="resume-btn btn-view" style={{ padding: '10px 20px', borderRadius: '6px', fontSize: '0.85rem', fontWeight: '600', textDecoration: 'none', transition: 'all 0.3s', background: 'var(--accent-primary)', color: 'var(--bg-color)' }}>Minimal ATS</a>
+                <a href="Resume-Java-Internship-v2/index.html" className="resume-btn btn-view" style={{ padding: '10px 20px', borderRadius: '6px', fontSize: '0.85rem', fontWeight: '600', textDecoration: 'none', transition: 'all 0.3s', background: 'transparent', color: 'var(--accent-primary)', border: '1px solid var(--accent-primary)' }}>Interactive Styled</a>
             </div>
         </div>
 
