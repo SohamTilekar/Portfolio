@@ -1,4 +1,53 @@
 export function initPortfolio() {
+  // Dynamic project ordering based on source resume
+  const params = new URLSearchParams(window.location.search);
+  const fromParam = params.get('from');
+  
+  if (fromParam) {
+    const container = document.querySelector('.projects-container');
+    if (container) {
+      const cards = Array.from(container.querySelectorAll('.project-card'));
+      let order = [];
+      if (fromParam === 'java') {
+        order = ['project-codearena', 'project-jpassman', 'project-giggly', 'project-tilekar', 'project-berus', 'project-ss32'];
+      } else if (fromParam === 'riscv') {
+        order = ['project-ss32', 'project-tilekar', 'project-giggly', 'project-berus'];
+      } else if (fromParam === 'systems') {
+        order = ['project-giggly', 'project-tilekar', 'project-berus', 'project-ss32'];
+      }
+      
+      if (order.length > 0) {
+        const orderedCards = [];
+        const otherCards = [];
+        
+        cards.forEach(card => {
+          const idx = order.indexOf(card.id);
+          if (idx !== -1) {
+            orderedCards[idx] = card;
+          } else {
+            otherCards.push(card);
+          }
+        });
+        
+        orderedCards.forEach(card => {
+          if (card) {
+            card.classList.remove('hidden-project');
+            card.style.display = 'flex';
+            container.appendChild(card);
+          }
+        });
+        
+        otherCards.forEach(card => {
+          if (card) {
+            card.classList.add('hidden-project');
+            card.style.display = 'none';
+            container.appendChild(card);
+          }
+        });
+      }
+    }
+  }
+
   // Typing Effect
   const text = "Hi, I'm Soham Tilekar.";
   const typingText = document.getElementById("typing-text");

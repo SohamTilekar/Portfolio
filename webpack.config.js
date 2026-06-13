@@ -44,6 +44,7 @@ export default {
         { from: 'src/asserts', to: 'asserts' },
         { from: 'src/Resume', to: 'Resume', noErrorOnMissing: true },
         { from: 'src/Resume-RISCV-Ext-Landscape', to: 'Resume-RISCV-Ext-Landscape', noErrorOnMissing: true },
+        { from: 'src/Resume-Java-Internship', to: 'Resume-Java-Internship', noErrorOnMissing: true },
       ],
     }),
   ],

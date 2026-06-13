@@ -67,6 +67,7 @@ const Nav = () => {
             <div className="nav-dropdown-content">
               <a href="Resume/index.html">Standard Resume</a>
               <a href="Resume-RISCV-Ext-Landscape/index.html">RISC-V Extended</a>
+              <a href="Resume-Java-Internship/index.html">Core Java Resume</a>
               <Link to="/resumes">View All Versions</Link>
             </div>
           </div>

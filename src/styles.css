@@ -2428,3 +2428,185 @@ footer {
     text-decoration-thickness: 2px;
 }
 
+/* Theme Styles for Code Arena and JPassMan */
+.theme-codearena {
+    background: radial-gradient(
+        circle at top left,
+        rgba(249, 115, 22, 0.22), /* Orange accent */
+        rgba(10, 15, 29, 0.95)
+    );
+    border-color: rgba(249, 115, 22, 0.35);
+}
+
+.theme-codearena::after {
+    content: "matchmaking.duel()  sandbox.compile()  elo.calculate()  monaco.editor()";
+    position: absolute;
+    left: -14px;
+    right: -14px;
+    bottom: -8px;
+    color: rgba(249, 115, 22, 0.25);
+    font-family: "Fira Code", monospace;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.theme-codearena .feature-group {
+    border-color: #f97316;
+    background: rgba(249, 115, 22, 0.03);
+}
+
+.theme-codearena .feature-group h4 {
+    color: #f97316;
+}
+
+.theme-codearena .view-project {
+    color: #f97316;
+    background: rgba(249, 115, 22, 0.05);
+    border-color: rgba(249, 115, 22, 0.2);
+}
+
+.theme-codearena .view-project:hover {
+    background: rgba(249, 115, 22, 0.1);
+    border-color: #f97316;
+}
+
+.theme-jpassman {
+    background: radial-gradient(
+        circle at top right,
+        rgba(6, 182, 212, 0.2), /* Cyan / Terminal glow */
+        rgba(10, 15, 29, 0.95)
+    );
+    border-color: rgba(6, 182, 212, 0.35);
+}
+
+.theme-jpassman::after {
+    content: "crypto.encrypt(AES/GCM)  kdf.derive(PBKDF2)  ansi.render(tui)";
+    position: absolute;
+    left: -14px;
+    right: -14px;
+    bottom: -8px;
+    color: rgba(6, 182, 212, 0.25);
+    font-family: "Fira Code", monospace;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.theme-jpassman .feature-group {
+    border-color: #06b6d4;
+    background: rgba(6, 182, 212, 0.03);
+}
+
+.theme-jpassman .feature-group h4 {
+    color: #06b6d4;
+}
+
+.theme-jpassman .view-project {
+    color: #06b6d4;
+    background: rgba(6, 182, 212, 0.05);
+    border-color: rgba(6, 182, 212, 0.2);
+}
+
+.theme-jpassman .view-project:hover {
+    background: rgba(6, 182, 212, 0.1);
+    border-color: #06b6d4;
+}
+
+/* Card improvements for Code Arena & JPassMan */
+.theme-codearena strong {
+    color: #f97316 !important;
+}
+
+.theme-jpassman strong {
+    color: #06b6d4 !important;
+}
+
+.codearena-wire {
+    position: relative;
+}
+
+.codearena-wire::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 10px;
+    border: 1px solid rgba(249, 115, 22, 0.5);
+    box-shadow:
+        0 0 12px rgba(249, 115, 22, 0.35),
+        inset 0 0 24px rgba(249, 115, 22, 0.12);
+    pointer-events: none;
+}
+
+.terminal-frame {
+    float: right;
+    width: 280px;
+    max-width: 45%;
+    border-radius: 8px;
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    background: #0d1117;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+    margin-left: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.terminal-frame:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
+}
+
+.terminal-header-dots {
+    background: #161b22;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.15);
+}
+
+.terminal-header-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-header-dots .dot.red { background: #ff5f56; }
+.terminal-header-dots .dot.yellow { background: #ffbd2e; }
+.terminal-header-dots .dot.green { background: #27c93f; }
+
+.terminal-header-dots .terminal-title {
+    color: rgba(6, 182, 212, 0.7);
+    font-family: "Fira Code", monospace;
+    font-size: 0.65rem;
+    margin-left: 8px;
+}
+
+.terminal-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Mobile responsive terminal frame */
+@media (max-width: 768px) {
+    .terminal-frame {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 16px 0;
+    }
+}
+

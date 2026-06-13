@@ -129,6 +129,7 @@ const Home = () => {
                     <div className="skill-category glass-card">
                         <h3>Languages</h3>
                         <ul>
+                            <li className="highlighted clickable-skill" data-project="project-codearena">Java (Expert)</li>
                             <li className="highlighted clickable-skill" data-project="project-berus">Rust (Expert)</li>
                             <li className="highlighted clickable-skill" data-project="project-giggly">C++ / C (Expert)</li>
                             <li className="clickable-skill" data-project="project-wardrobe">Python (Expert)</li>
@@ -139,22 +140,22 @@ const Home = () => {
                     <div className="skill-category glass-card">
                         <h3>Systems & Low-Level</h3>
                         <ul>
+                            <li className="highlighted clickable-skill" data-project="project-codearena">Concurrency & Multithreading</li>
                             <li className="highlighted clickable-skill" data-project="project-giggly">LLVM Backend & Compilers</li>
                             <li className="highlighted clickable-skill" data-project="project-tilekar">Kernel Dev & Bootloaders</li>
                             <li className="clickable-skill" data-project="project-tilekar">VFS / Paging / PMM</li>
                             <li className="highlighted clickable-skill" data-project="project-ss32">CPU Arch & ISA Design</li>
-                            <li className="clickable-skill" data-project="project-giggly">Lexical Analysis / Parsing</li>
-                            <li className="clickable-skill" data-project="project-tilekar">Device Drivers (ATA/PCI)</li>
+                            <li className="clickable-skill" data-project="project-jpassman">Cryptography (AES/GCM)</li>
                         </ul>
                     </div>
                     <div className="skill-category glass-card">
                         <h3>Infrastructure & Tools</h3>
                         <ul>
+                            <li className="clickable-skill" data-project="project-codearena">Docker & JVM Sandboxing</li>
                             <li className="clickable-skill" data-project="project-portfolio">Node.js, React, Tailwind, Webpack</li>
                             <li className="clickable-skill" data-project="project-portfolio">Git & Version Control</li>
-                            <li className="clickable-skill" data-project="project-portfolio">Docker & Containerization</li>
+                            <li className="clickable-skill" data-project="project-jpassman">Interactive TUI & Maven</li>
                             <li className="clickable-skill" data-project="project-friday">Agentic AI Architectures</li>
-                            <li className="clickable-skill" data-project="project-wardrobe">FastAPI, Flask & SocketIO</li>
                             <li className="clickable-skill" data-project="project-vidiopy">FFmpeg / VidioPy</li>
                         </ul>
                     </div>
@@ -548,6 +549,95 @@ const Home = () => {
 
                         <a
                             href="https://github.com/SohamTilekar/SS32"
+                            target="_blank" rel="noreferrer"
+                            className="view-project"
+                            ><i className="fab fa-github"></i> View Source &rarr;</a
+                        >
+                    </div>
+
+                    {/* Code Arena */}
+                    <div className="project-card glass-card theme-codearena hidden-project" id="project-codearena" style={{ display: 'none' }}>
+                        <div className="card-halo" aria-hidden="true"></div>
+                        <div className="project-header">
+                            <div className="header-top">
+                                <span className="tech-tag">Core Java 17 | Vanilla JS | Docker</span>
+                                <h3>Code Arena</h3>
+                            </div>
+                        </div>
+                        <div className="project-images codearena-wire">
+                            <img
+                                src="asserts/Solo Arena.png"
+                                alt="Solo Arena Challenge"
+                                className="project-img clickable-asset"
+                                onClick={() => window.openModal('asserts/Solo Arena.png')}
+                            />
+                            <img
+                                src="asserts/1v1.png"
+                                alt="1v1 Real-Time Duel"
+                                className="project-img clickable-asset"
+                                onClick={() => window.openModal('asserts/1v1.png')}
+                            />
+                        </div>
+                        <p className="project-desc">
+                            A <strong>Real-Time Multiplayer Competitive Programming Platform</strong> built from scratch with an algorithmic Elo ranking system, concurrency utilities, and a secure code sandbox.
+                        </p>
+                        <div className="project-details">
+                            <div className="detail-group feature-group">
+                                <h4>✨ Key Features</h4>
+                                <ul>
+                                    <li><strong>Zero-Dependency Backend:</strong> Powered by Java's native <code>HttpServer</code> package with custom HTTP routing, JSON parsing, and cookie/session handling.</li>
+                                    <li><strong>Multithreading & Matchmaking:</strong> Custom thread pools manage active duels, matchmaking queue polling, and challenge countdown timers.</li>
+                                    <li><strong>JVM Code Sandbox:</strong> Executes user-submitted code in a restricted runtime process via <code>ProcessBuilder</code>, with memory limits (<code>-Xmx64m</code>), file scan keyword-blocklists, and timeouts to prevent exploits.</li>
+                                    <li><strong>State Persistence:</strong> Atomic object serialization for local persistence of player ranks, session logs, and match history.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a
+                            href="https://github.com/SohamTilekar/CodeArena"
+                            target="_blank" rel="noreferrer"
+                            className="view-project"
+                            ><i className="fab fa-github"></i> View Source &rarr;</a
+                        >
+                    </div>
+
+                    {/* JPassMan */}
+                    <div className="project-card glass-card theme-jpassman hidden-project" id="project-jpassman" style={{ display: 'none' }}>
+                        <div className="card-halo" aria-hidden="true"></div>
+                        <div className="project-header">
+                            <div className="header-top">
+                                <span className="tech-tag">Core Java 17 | Cryptography | Maven</span>
+                                <h3>JPassMan</h3>
+                            </div>
+                        </div>
+                        <div className="project-details" style={{ display: 'block', margin: '20px 0' }}>
+                            <div className="detail-group feature-group">
+                                <h4>✨ Key Features</h4>
+                                <div className="terminal-frame clickable-asset" onClick={() => window.openModal('asserts/JPassMan_Homescreen.png')}>
+                                    <div className="terminal-header-dots">
+                                        <span className="dot red"></span>
+                                        <span className="dot yellow"></span>
+                                        <span className="dot green"></span>
+                                        <span className="terminal-title">jpassman --tui</span>
+                                    </div>
+                                    <img
+                                        src="asserts/JPassMan_Homescreen.png"
+                                        alt="JPassMan TUI Homescreen"
+                                    />
+                                </div>
+                                <ul>
+                                    <li><strong>Interactive Terminal TUI:</strong> Professional text-based interface featuring keyboard navigation, SGR mouse tracking, and tab button focus.</li>
+                                    <li><strong>Cryptographic Security:</strong> Uses <code>AES/GCM/NoPadding</code> encryption with unique 12-byte IVs and <code>PBKDF2WithHmacSHA256</code> (65,536 iterations) key derivation.</li>
+                                    <li><strong>Zero Supply-Chain Risks:</strong> Implemented entirely on top of native JDK libraries, containing zero external software dependencies.</li>
+                                    <li><strong>Memory Safety:</strong> Active protection against memory scraping attacks by instantly overwriting and zeroing out master password character arrays after key derivation.</li>
+                                    <li><strong>Multiple User Profiles:</strong> Instantly switches between completely isolated, portable database files (e.g. <code>work.db</code>, <code>personal.db</code>) saved directly to local storage.</li>
+                                    <li><strong>Password Generator:</strong> Integrates a cryptographically secure generator allowing real-time tuning of length, character sets (alphanumeric, capitals, symbols), and strength requirements.</li>
+                                    <li><strong>Classic CLI Fallback:</strong> Designed with an auto-fallback routine that switches to a clean, line-by-line stdin CLI if the host terminal lacks ANSI escape sequences or mouse tracking capabilities.</li>
+                                </ul>
+                            </div>
+                            <div style={{ clear: 'both' }}></div>
+                        </div>
+                        <a
+                            href="https://github.com/SohamTilekar/JPassMan"
                             target="_blank" rel="noreferrer"
                             className="view-project"
                             ><i className="fab fa-github"></i> View Source &rarr;</a

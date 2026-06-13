@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Tilekar - Resume (Core Java Developer)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="print-notice">
+        <span>🌟 For the best interactive experience and animated showcases, please visit:</span>
+        <a href="../?from=java" target="_blank">https://sohamtilekar.github.io/Portfolio</a>
+    </div>
+
+    <div class="resume-container">
+        
+        <!-- CALL TO ACTION (Visible in Print) -->
+        <div class="portfolio-cta">
+            <p>🌐 <strong>Note to Reader:</strong> Kindly visit <a href="../?from=java" target="_blank">https://sohamtilekar.github.io/Portfolio</a> for an interactive and even better project showcase after reading this resume.</p>
+        </div>
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Soham Tilekar 👨‍💻</h1>
+                <p class="subtitle">🚀 Core Java Developer | Backend Engineer</p>
+                <div class="contact-info">
+                    <a href="mailto:sohamtilekar233@gmail.com"><i class="fas fa-envelope"></i> sohamtilekar233@gmail.com</a>
+                    <a href="https://github.com/SohamTilekar" target="_blank"><i class="fab fa-github"></i> github.com/SohamTilekar</a>
+                    <a href="https://www.linkedin.com/in/soham-tilekar" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/soham-tilekar</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Pune, India 🇮🇳</span>
+                </div>
+            </div>
+            <img src="../asserts/PFP.png" alt="Soham Tilekar" class="profile-pic">
+        </header>
+
+        <!-- SUMMARY -->
+        <section class="section">
+            <h2 class="section-title">📄 Professional Summary</h2>
+            <p class="summary-text">
+                Detail-oriented <strong>Core Java Developer</strong> with a passion for building high-performance, <strong>zero-dependency backend applications</strong> and systems from scratch. Proven expertise in <strong>multithreading, concurrent data structures, socket networking (HTTP protocols)</strong>, custom JVM sandboxing, cryptography, and interactive ANSI terminal UIs. Experienced in writing clean, structured code using Maven, designing memory-safe programs, and optimizing local disk persistence. Eager to contribute to a collaborative engineering team as a <strong>Core Java Development Intern</strong>.
+            </p>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section class="section">
+            <h2 class="section-title">🛠️ Technical Skills</h2>
+            <div class="skills-tags-container">
+                <span class="skill-tag highlighted"><i class="fab fa-java"></i> Core Java 17/21 (Expert)</span>
+                <span class="skill-tag highlighted"><i class="fas fa-cubes"></i> Multithreading & Concurrency</span>
+                <span class="skill-tag highlighted"><i class="fas fa-shield-alt"></i> Security & Cryptography (AES, PBKDF2)</span>
+                <span class="skill-tag"><i class="fas fa-network-wired"></i> Network Socket Programming & HTTP</span>
+                <span class="skill-tag"><i class="fas fa-box-open"></i> JVM Sandboxing & ProcessBuilder</span>
+                <span class="skill-tag"><i class="fas fa-database"></i> Custom Disk Serialization</span>
+                <span class="skill-tag"><i class="fas fa-tools"></i> Maven, Git/GitHub, Docker</span>
+                <span class="skill-tag"><i class="fas fa-code"></i> OOPs Design & Data Structures</span>
+                <span class="skill-tag"><i class="fab fa-rust"></i> Rust / C++ (Proficient)</span>
+                <span class="skill-tag"><i class="fab fa-js"></i> Vanilla JS, HTML5, CSS3</span>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section projects-section">
+            <h2 class="section-title">⭐ Selected Projects</h2>
+            
+            <div class="project-item" id="project-codearena">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h3><i class="fas fa-code"></i> Code Arena</h3>
+                        <span class="project-tech">Java 17 | Vanilla JS | Docker | Monaco Editor</span>
+                    </div>
+                    <a href="https://github.com/SohamTilekar/CodeArena" target="_blank" class="project-link">github.com/SohamTilekar/CodeArena</a>
+                </div>
+                <div class="project-content-with-image">
+                    <div class="project-text">
+                        <p class="project-desc">A <strong>Real-Time Multiplayer Competitive Programming Platform</strong> featuring 1v1 code duels, solo challenges, and an algorithmic Elo ranking system—built from scratch with <strong>zero external framework dependencies</strong>.</p>
+                        <ul class="project-bullets">
+                            <li><strong>Custom HTTP Server:</strong> Engineered backend routing, JSON parsing, dynamic HTTP response headers, and session-token validation using the native <code>com.sun.net.httpserver</code> package.</li>
+                            <li><strong>Concurrent Request Handling:</strong> Configured a custom <code>FixedThreadPool</code> executor to handle highly concurrent requests, session authentication, and matchmaking.</li>
+                            <li><strong>Secure Sandbox Execution:</strong> Spawns isolated execution processes using <code>ProcessBuilder</code>, restricting JVM memory (<code>-Xmx64m</code>), enforcing I/O limitations, and checking source files for forbidden keywords to prevent sandbox escapes.</li>
+                            <li><strong>Elo Engine & State Persistence:</strong> Designed an Elo calculator combining duel speed multipliers and problem difficulty. Built persistent atomic state-saves of system states using Java <code>Serializable</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="project-images-col">
+                        <img src="../asserts/Solo Arena.png" alt="Solo Arena" class="project-image stacked-img">
+                        <img src="../asserts/1v1.png" alt="1v1 Duel" class="project-image stacked-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" id="project-jpassman">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h3><i class="fas fa-key"></i> JPassMan</h3>
+                        <span class="project-tech">Java 17 | Maven | Cryptography | Terminal UI (TUI)</span>
+                    </div>
+                    <a href="https://github.com/SohamTilekar/JPassMan" target="_blank" class="project-link">github.com/SohamTilekar/JPassMan</a>
+                </div>
+                <div class="project-content-with-image">
+                    <div class="project-text">
+                        <p class="project-desc">A <strong>zero-dependency, offline-first Password Manager</strong> featuring a complete interactive Terminal User Interface (TUI) and production-grade security.</p>
+                        <ul class="project-bullets">
+                            <li><strong>Robust Cryptography:</strong> Implemented secure credential storage using <code>AES/GCM/NoPadding</code> with a <code>PBKDF2WithHmacSHA256</code> key derivation function (65,536 iterations, 16-byte random salt, unique 12-byte IVs).</li>
+                            <li><strong>Interactive Terminal UI:</strong> Programmed a mouse-clickable and keyboard-navigable terminal interface (ANSI escape codes, SGR Mouse tracking, true tab-focus buttons, list navigation).</li>
+                            <li><strong>Memory Safety:</strong> Explicitly designed data flow to overwrite/wipe master password char arrays immediately after key derivation to prevent memory extraction attacks.</li>
+                            <li><strong>Standard Tooling:</strong> Packaged via Maven standard file structures, enabling native execution script wrappers and clean isolated profile databases (<code>.db</code> files).</li>
+                        </ul>
+                    </div>
+                    <div class="project-images-col">
+                        <img src="../asserts/JPassMan_Homescreen.png" alt="JPassMan UI" class="project-image inline-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" id="project-gigglycode">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h3><i class="fas fa-cogs"></i> GigglyCode Compiler</h3>
+                        <span class="project-tech">C++ | LLVM 17</span>
+                    </div>
+                    <a href="https://github.com/SohamTilekar/GigglyCode" target="_blank" class="project-link">github.com/SohamTilekar/GigglyCode</a>
+                </div>
+                <div class="project-content-with-image">
+                    <div class="project-text">
+                        <p class="project-desc">A compiled programming language engineered to combine systems-level control with a clean, pythonic syntax.</p>
+                        <ul class="project-bullets">
+                            <li>Designed and coded the entire frontend compiler flow: Lexer, Parser, AST representation, and LLVM Code Generation.</li>
+                            <li>Shows deep understanding of compiler architecture, memory layouts, static/dynamic typing systems, and low-level optimizations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="section">
+            <h2 class="section-title">🎓 Education</h2>
+            <div class="education-item" style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3>B.Tech in Computer Science Engineering</h3>
+                    <p class="edu-school"><i class="fas fa-university"></i> Pimpri Chinchwad University, Pune</p>
+                </div>
+                <p class="edu-date" style="margin: 0; font-size: 0.9rem; color: var(--text-muted);"><i class="far fa-calendar-alt"></i> August 2024 - July 2028 (3rd Semester)</p>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION (Visible in Print) -->
+        <div class="portfolio-cta">
+            <p>🌐 <strong>Note to Reader:</strong> Kindly visit <a href="../?from=java" target="_blank">https://sohamtilekar.github.io/Portfolio</a> for an interactive and even better project showcase after reading this resume.</p>
+        </div>
+
+    </div>
+</body>
+</html>
