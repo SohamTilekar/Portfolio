@@ -65,11 +65,33 @@
         <section class="section projects-section">
             <h2 class="section-title">⭐ Selected Projects</h2>
             
+            <div class="project-item" id="project-jpassman">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h3><i class="fas fa-key"></i> JPassMan</h3>
+                        <span class="project-tech">Java 17 | Maven | Cryptography | TUI</span>
+                    </div>
+                    <a href="https://github.com/SohamTilekar/JPassMan" target="_blank" class="project-link">github.com/SohamTilekar/JPassMan</a>
+                </div>
+                <div class="project-content-with-image">
+                    <div class="project-text">
+                        <p class="project-desc">A <strong>zero-dependency, offline-first Password Manager</strong> featuring a complete interactive Terminal User Interface (TUI) and production-grade security.</p>
+                        <ul class="project-bullets">
+                            <li><strong>Robust Cryptography:</strong> Implemented secure credential storage using <code>AES/GCM/NoPadding</code> with a <code>PBKDF2WithHmacSHA256</code> key derivation function (65,536 iterations, 16-byte random salt, unique 12-byte IVs).</li>
+                            <li><strong>Interactive Terminal UI:</strong> Programmed a mouse-clickable and keyboard-navigable terminal interface (ANSI escape codes, SGR Mouse tracking, true tab-focus buttons, list navigation).</li>
+                            <li><strong>Memory Safety:</strong> Explicitly designed data flow to overwrite/wipe master password char arrays immediately after key derivation to prevent memory extraction attacks.</li>
+                            <li><strong>Standard Tooling:</strong> Packaged via Maven standard file structures, enabling native execution script wrappers and clean isolated profile databases (<code>.db</code> files).</li>
+                        </ul>
+                    </div>
+                    <img src="../asserts/JPassMan_Homescreen.png" alt="JPassMan UI" class="project-image inline-img">
+                </div>
+            </div>
+
             <div class="project-item" id="project-codearena">
                 <div class="project-header">
                     <div class="project-title-row">
                         <h3><i class="fas fa-code"></i> Code Arena</h3>
-                        <span class="project-tech">Java 17 | Vanilla JS | Docker | Monaco Editor</span>
+                        <span class="project-tech">Java 17 | Vanilla JS | Docker | Monaco</span>
                     </div>
                     <a href="https://github.com/SohamTilekar/CodeArena" target="_blank" class="project-link">github.com/SohamTilekar/CodeArena</a>
                 </div>
@@ -86,30 +108,6 @@
                     <div class="project-images-col">
                         <img src="../asserts/Solo Arena.png" alt="Solo Arena" class="project-image stacked-img">
                         <img src="../asserts/1v1.png" alt="1v1 Duel" class="project-image stacked-img">
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-item" id="project-jpassman">
-                <div class="project-header">
-                    <div class="project-title-row">
-                        <h3><i class="fas fa-key"></i> JPassMan</h3>
-                        <span class="project-tech">Java 17 | Maven | Cryptography | Terminal UI (TUI)</span>
-                    </div>
-                    <a href="https://github.com/SohamTilekar/JPassMan" target="_blank" class="project-link">github.com/SohamTilekar/JPassMan</a>
-                </div>
-                <div class="project-content-with-image">
-                    <div class="project-text">
-                        <p class="project-desc">A <strong>zero-dependency, offline-first Password Manager</strong> featuring a complete interactive Terminal User Interface (TUI) and production-grade security.</p>
-                        <ul class="project-bullets">
-                            <li><strong>Robust Cryptography:</strong> Implemented secure credential storage using <code>AES/GCM/NoPadding</code> with a <code>PBKDF2WithHmacSHA256</code> key derivation function (65,536 iterations, 16-byte random salt, unique 12-byte IVs).</li>
-                            <li><strong>Interactive Terminal UI:</strong> Programmed a mouse-clickable and keyboard-navigable terminal interface (ANSI escape codes, SGR Mouse tracking, true tab-focus buttons, list navigation).</li>
-                            <li><strong>Memory Safety:</strong> Explicitly designed data flow to overwrite/wipe master password char arrays immediately after key derivation to prevent memory extraction attacks.</li>
-                            <li><strong>Standard Tooling:</strong> Packaged via Maven standard file structures, enabling native execution script wrappers and clean isolated profile databases (<code>.db</code> files).</li>
-                        </ul>
-                    </div>
-                    <div class="project-images-col">
-                        <img src="../asserts/JPassMan_Homescreen.png" alt="JPassMan UI" class="project-image inline-img">
                     </div>
                 </div>
             </div>
