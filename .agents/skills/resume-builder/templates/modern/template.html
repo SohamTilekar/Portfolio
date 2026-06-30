@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{NAME}} - Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{NAME}}</h1>
+            <div class="contact-info">
+                {{LOCATION}} | 
+                <a href="mailto:{{EMAIL}}">{{EMAIL}}</a> | 
+                <a href="{{LINKEDIN_URL}}">{{LINKEDIN_URL}}</a> | 
+                <a href="{{GITHUB_URL}}">{{GITHUB_URL}}</a>
+            </div>
+        </header>
+
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>{{PROFESSIONAL_SUMMARY}}</p>
+        </section>
+
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <!-- REPEAT FOR EACH SKILL CATEGORY -->
+                <li><strong>{{CATEGORY_NAME}}:</strong> {{SKILLS_LIST}}</li>
+            </ul>
+        </section>
+
+        <!-- Use this structure for Professional Experience -->
+        <!--
+        <section class="experience">
+            <h2>Professional Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>{{ROLE}}</strong> | {{ORGANIZATION}}</span>
+                    <span class="right-side"><em>{{DATE_RANGE}}</em></span>
+                </div>
+                <div class="item-sub">
+                    <span>{{LOCATION}}</span>
+                </div>
+                <ul>
+                    <li>{{BULLET_POINT}}</li>
+                </ul>
+            </div>
+        </section>
+        -->
+
+        <section class="projects">
+            <h2>Projects</h2>
+            
+            <!-- REPEAT FOR EACH PROJECT -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>{{PROJECT_NAME}}</strong> ({{PROJECT_SHORT_DESC}}) | <a href="{{GITHUB_LINK}}" target="_blank">{{GITHUB_LINK}}</a></span>
+                    <span class="right-side"><em>{{TIME_TAKEN}}</em></span>
+                </div>
+                <div class="item-sub">
+                    <span>{{TECH_STACK}}</span>
+                </div>
+                <ul>
+                    <!-- REPEAT FOR EACH BULLET POINT -->
+                    <li>{{BULLET_POINT}}</li>
+                </ul>
+            </div>
+            
+        </section>
+
+        <section class="education">
+            <h2>Certifications, Achievements & Education</h2>
+            <!-- REPEAT FOR EACH EDUCATION/ACHIEVEMENT ITEM -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side">{{DEGREE_OR_CERTIFICATE}}</span>
+                    <span class="right-side">{{DATE_RANGE}}</span>
+                </div>
+                <div class="item-sub">
+                    <span>{{INSTITUTION_NAME}}</span>
+                    <span>{{ADDITIONAL_INFO}}</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

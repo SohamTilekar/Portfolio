@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root {
+    --text-main: #202124;
+    --text-muted: #5f6368;
+    --link-color: #1a73e8;
+    --accent-color: #174ea6;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin: 0; padding: 0;
+}
+@page { size: A4; margin: 10mm 15mm; }
+.container { max-width: 800px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 12px; padding-bottom: 8px; }
+header h1 { font-size: 22pt; font-weight: 700; color: var(--text-main); margin: 0 0 4px 0; letter-spacing: -0.5px; }
+.contact-info { font-size: 9.5pt; color: var(--text-muted); }
+.contact-info a { color: var(--link-color); text-decoration: none; font-weight: 500; }
+section { margin-bottom: 12px; }
+h2 { font-size: 12pt; font-weight: 600; color: var(--accent-color); text-transform: uppercase; border-bottom: 2px solid #e8eaed; margin: 0 0 6px 0; padding-bottom: 2px; letter-spacing: 0.5px; }
+.summary p { margin: 0; text-align: justify; }
+.skills-list { margin: 0; padding-left: 0; list-style: none; }
+.skills-list li { margin-bottom: 4px; }
+.item { margin-bottom: 8px; page-break-inside: avoid; }
+.item-header { display: flex; justify-content: space-between; align-items: baseline; font-size: 10.5pt; color: var(--text-main); }
+.item-header strong { font-weight: 600; color: #000; }
+.item-header a { color: var(--link-color); text-decoration: none; }
+.item-sub { display: flex; justify-content: space-between; align-items: baseline; font-size: 9.5pt; color: var(--text-muted); margin-top: 1px; margin-bottom: 2px; }
+.item ul { margin: 0; padding-left: 20px; }
+.item ul li { margin-bottom: 2px; text-align: justify; }
+.education .item-header { font-weight: 600; }

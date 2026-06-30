@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Tilekar | Systems & Compiler Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER NAV -->
+    <nav class="navbar">
+        <div class="nav-brand">SOHAM TILEKAR</div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">ABOUT</a>
+            <a href="#grid" class="nav-link active">THE GRID</a>
+            <a href="resume.html" class="nav-link highlighted-link">RESUMES</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION & TOP CONTACT -->
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-profile">
+                    <div class="profile-img-wrapper">
+                        <img src="asserts/PFP.png" alt="Soham Tilekar" class="profile-img lightbox-trigger">
+                        <div class="profile-shadow"></div>
+                    </div>
+                </div>
+                <div class="hero-contact-header">
+                    <a href="https://github.com/SohamTilekar" target="_blank" class="contact-icon-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/soham-tilekar" target="_blank" class="contact-icon-btn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:sohamtilekar233@gmail.com" class="contact-icon-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-right" id="about">
+                <h1>Soham Tilekar</h1>
+                <div class="hero-intro-text">
+                    <p>Self-taught developer building <strong>foundational technology</strong> from scratch. I build <strong>custom compilers</strong>, <strong>monolithic operating systems</strong>, <strong>CPU architectures</strong>, and <strong>browser engines</strong>.</p>
+                    <p class="education-text"><i class="fas fa-university"></i> B.Tech in CSE (2025-2029) &bull; Pimpri Chinchwad University, Pune</p>
+                </div>
+                <div class="hero-badge-container">
+                    <a href="#gigglycode" class="hero-badge" style="text-decoration:none;">LLVM</a>
+                    <a href="#berus" class="hero-badge" style="text-decoration:none;">Rust</a>
+                    <a href="#gigglycode" class="hero-badge" style="text-decoration:none;">C++</a>
+                    <a href="#tilekaros" class="hero-badge" style="text-decoration:none;">x86 Assembly</a>
+                    <a href="#ss32" class="hero-badge" style="text-decoration:none;">ISA Design</a>
+                    <a href="#tilekaros" class="hero-badge" style="text-decoration:none;">Kernel Dev</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PROJECTS GRID -->
+    <main id="grid" class="grid-container">
+        <!-- GigglyCode -->
+        <article id="gigglycode" class="grid-card gigglycode-card">
+            <div class="card-header-wrapper">
+                <div class="card-header">
+                    <h2 class="card-title">GigglyCode</h2>
+                    <span class="card-accent-badge">Compiler Backend</span>
+                </div>
+                <p class="card-tagline">Compiled Programming Language</p>
+            </div>
+            <div class="card-divider"></div>
+            
+            <div class="card-meta">
+                <div class="meta-row">
+                    <span class="meta-label">TECH</span>
+                    <span class="meta-value">C++ &bull; LLVM 17+ &bull; CMake</span>
+                </div>
+                <div class="meta-row text-desc">
+                    <span class="meta-label">BRIEF</span>
+                    <span class="meta-value">Compiles template-like structures (`@generic`) directly into native optimized machine code, featuring dynamic Python interop hooks.</span>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">FEATURES</span>
+                    <span class="meta-value tags-container">
+                        <span class="value-tag">Memory & Thread Safety</span>
+                        <span class="value-tag">Python & C Interop</span>
+                        <span class="value-tag">Type Inference</span>
+                        <span class="value-tag">Generics & Overloads</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="card-custom-content">
+                <div class="carousel-snippet active">
+                    <div class="code-snippet-title">
+                        <span><i class="fas fa-code"></i> structs.gig</span>
+                        <button class="carousel-next-btn" title="Next Snippet" onclick="window.nextGigglySnippet()"><i class="fas fa-chevron-right"></i> Next</button>
+                    </div>
+                    <pre class="code-snippet"><code><span class="gig-comment"># Define a generic struct for a linked list node</span>
+<span class="gig-keyword">@generic</span>(<span class="gig-type">T</span>: <span class="gig-type">Any</span>)
+<span class="gig-keyword">struct</span> ListNode {
+    value: <span class="gig-type">T</span>;
+    next: <span class="gig-type">ListNode</span>[<span class="gig-type">T</span>];
+
+    <span class="gig-keyword">def</span> <span class="gig-func">__init__</span>(<span class="gig-keyword">self</span>: <span class="gig-type">ListNode</span>[<span class="gig-type">T</span>], value: <span class="gig-type">T</span>, next: <span class="gig-type">ListNode</span>[<span class="gig-type">T</span>]) -&gt; <span class="gig-type">void</span> {
+        <span class="gig-keyword">self</span>.value = value;
+        <span class="gig-keyword">self</span>.next = next;
+    };
+};</code></pre>
+                </div>
+                <div class="carousel-snippet">
+                    <div class="code-snippet-title">
+                        <span><i class="fas fa-code"></i> methods.gig</span>
+                        <button class="carousel-next-btn" title="Next Snippet" onclick="window.nextGigglySnippet()"><i class="fas fa-chevron-right"></i> Next</button>
+                    </div>
+                    <pre class="code-snippet"><code><span class="gig-keyword">@generic</span>(<span class="gig-type">T</span>: <span class="gig-type">Any</span>)
+<span class="gig-keyword">struct</span> LinkedList {
+    head: <span class="gig-type">ListNode</span>[<span class="gig-type">T</span>];
+
+    <span class="gig-keyword">def</span> <span class="gig-func">add</span>(<span class="gig-keyword">self</span>: <span class="gig-type">LinkedList</span>[<span class="gig-type">T</span>], value: <span class="gig-type">T</span>) -&gt; <span class="gig-type">void</span> {
+        newNode: <span class="gig-type">ListNode</span>[<span class="gig-type">T</span>] = <span class="gig-keyword">new</span> <span class="gig-func">ListNode</span>(value, <span class="gig-keyword">nullptr</span>);
+        <span class="gig-keyword">if</span> (<span class="gig-keyword">self</span>.head == <span class="gig-keyword">nullptr</span>) {
+            <span class="gig-keyword">self</span>.head = newNode;
+        } <span class="gig-keyword">else</span> {
+            current: <span class="gig-type">ListNode</span>[<span class="gig-type">T</span>] = <span class="gig-keyword">self</span>.head;
+            <span class="gig-keyword">while</span> (current.next != <span class="gig-keyword">nullptr</span>) {
+                current = current.next;
+            }
+            current.next = newNode;
+        };
+    };
+};</code></pre>
+                </div>
+                <div class="carousel-snippet">
+                    <div class="code-snippet-title">
+                        <span><i class="fas fa-code"></i> control_flow.gig</span>
+                        <button class="carousel-next-btn" title="Next Snippet" onclick="window.nextGigglySnippet()"><i class="fas fa-chevron-right"></i> Next</button>
+                    </div>
+                    <pre class="code-snippet"><code><span class="gig-comment"># Switch-case example</span>
+val: <span class="gig-type">int</span> = <span class="gig-num">2</span>;
+<span class="gig-keyword">switch</span> (val) {
+    <span class="gig-keyword">case</span> (<span class="gig-num">1</span>) { <span class="gig-func">printf</span>(<span class="gig-str">"Value is 1."</span>); }
+    <span class="gig-keyword">case</span> (<span class="gig-num">2</span>) { <span class="gig-func">printf</span>(<span class="gig-str">"Value is 2."</span>); }
+    <span class="gig-keyword">default</span>  { <span class="gig-func">printf</span>(<span class="gig-str">"Value is unknown."</span>); }
+}
+
+<span class="gig-comment"># While loop example</span>
+counter: <span class="gig-type">int</span> = <span class="gig-num">0</span>;
+<span class="gig-keyword">while</span> (counter &lt; <span class="gig-num">5</span>) {
+    <span class="gig-func">printf</span>(<span class="gig-str">"Counter: %i"</span>, counter);
+    counter = counter + <span class="gig-num">1</span>;
+};</code></pre>
+                </div>
+            </div>
+            
+            <div class="card-actions">
+                <a href="https://github.com/SohamTilekar/GigglyCode" target="_blank" class="card-btn">GitHub Source</a>
+            </div>
+        </article>
+
+        <!-- TilekarOS -->
+        <article id="tilekaros" class="grid-card os-card">
+            <div class="card-header-wrapper">
+                <div class="card-header">
+                    <h2 class="card-title">TilekarOS</h2>
+                    <span class="card-accent-badge">Monolithic OS</span>
+                </div>
+                <p class="card-tagline">Operating System from scratch</p>
+            </div>
+            <div class="card-divider"></div>
+            
+            <div class="card-meta">
+                <div class="meta-row">
+                    <span class="meta-label">TECH</span>
+                    <span class="meta-value">C &bull; x86 Assembly (NASM)</span>
+                </div>
+                <div class="meta-row text-desc">
+                    <span class="meta-label">BRIEF</span>
+                    <span class="meta-value">32-bit higher-half kernel running preemptive round-robin scheduling, multi-tasking user processes, and FAT12 buffer caching.</span>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">FEATURES</span>
+                    <span class="meta-value tags-container">
+                        <span class="value-tag">x86 Protected Mode</span>
+                        <span class="value-tag">Preemptive Scheduler</span>
+                        <span class="value-tag">VFS &amp; FAT12</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="card-img-container">
+                <img src="asserts/TilekarOS on QEMU.png" alt="TilekarOS Monolithic Kernel" class="card-img lightbox-trigger">
+            </div>
+            
+            <div class="card-actions">
+                <a href="https://github.com/SohamTilekar/TilekarOS" target="_blank" class="card-btn">GitHub Source</a>
+            </div>
+        </article>
+
+        <!-- Berus Browser Engine -->
+        <article id="berus" class="grid-card browser-card">
+            <div class="card-header-wrapper">
+                <div class="card-header">
+                    <h2 class="card-title">Berus Engine</h2>
+                    <span class="card-accent-badge">Browser Engine</span>
+                </div>
+                <p class="card-tagline">Web Browser in Rust</p>
+            </div>
+            <div class="card-divider"></div>
+            
+            <div class="card-img-container">
+                <img src="asserts/BerusBrowser.png" alt="Berus Browser Engine Layout" class="card-img lightbox-trigger">
+            </div>
+            
+            <div class="card-meta">
+                <div class="meta-row">
+                    <span class="meta-label">TECH</span>
+                    <span class="meta-value">Rust &bull; egui &bull; reqwest</span>
+                </div>
+                <div class="meta-row text-desc">
+                    <span class="meta-label">BRIEF</span>
+                    <span class="meta-value">Parses raw HTML to DOM trees and CSS selector rules, applying cascades manually. Features HTML5 audio element streaming.</span>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">FEATURES</span>
+                    <span class="meta-value tags-container">
+                        <span class="value-tag">HTML5 DOM Parser</span>
+                        <span class="value-tag">CSS Properties</span>
+                        <span class="value-tag">Egui GUI Render</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="card-actions">
+                <a href="https://github.com/SohamTilekar/berus" target="_blank" class="card-btn">GitHub Source</a>
+            </div>
+        </article>
+
+        <!-- SS32 Architecture -->
+        <article id="ss32" class="grid-card arch-card">
+            <div class="card-header-wrapper">
+                <div class="card-header">
+                    <h2 class="card-title">SS32 Arch</h2>
+                    <span class="card-accent-badge">CPU Hardware</span>
+                </div>
+                <p class="card-tagline">32-bit CPU from gates</p>
+            </div>
+            <div class="card-divider"></div>
+            
+            <div class="card-img-container">
+                <img src="asserts/CPU.png" alt="SS32 CPU Architecture Design" class="card-img lightbox-trigger">
+            </div>
+            
+            <div class="card-meta">
+                <div class="meta-row">
+                    <span class="meta-label">TECH</span>
+                    <span class="meta-value">Rust &bull; Logisim &bull; CustomASM</span>
+                </div>
+                <div class="meta-row text-desc">
+                    <span class="meta-label">BRIEF</span>
+                    <span class="meta-value">Fully functional 32-bit computer system designed from logic gates to cycles, equipped with an emulator, debugger, assembler.</span>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">FEATURES</span>
+                    <span class="meta-value tags-container">
+                        <span class="value-tag">Gate-level ISA</span>
+                        <span class="value-tag">Interactive Debugger</span>
+                        <span class="value-tag">Assembler Toolchain</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="card-actions">
+                <a href="https://github.com/SohamTilekar/SS32" target="_blank" class="card-btn">GitHub Source</a>
+            </div>
+        </article>
+
+        <!-- Friday v2 Agentic AI -->
+        <article id="fridayv2" class="grid-card ai-card">
+            <div class="card-header-wrapper">
+                <div class="card-header">
+                    <h2 class="card-title">Friday v2</h2>
+                    <span class="card-accent-badge">Agentic AI</span>
+                </div>
+                <p class="card-tagline">Autonomous AI Research Agent</p>
+            </div>
+            <div class="card-divider"></div>
+            
+            <div class="card-meta">
+                <div class="meta-row">
+                    <span class="meta-label">TECH</span>
+                    <span class="meta-value">Python &bull; Flask &bull; Gemini 1.5 Pro</span>
+                </div>
+                <div class="meta-row text-desc">
+                    <span class="meta-label">BRIEF</span>
+                    <span class="meta-value">Runs a complete autonomous research loop executing shell commands safely inside sandbox containers and tracking branching history.</span>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">FEATURES</span>
+                    <span class="meta-value tags-container">
+                        <span class="value-tag">Conversational AI</span>
+                        <span class="value-tag">Deep Research</span>
+                        <span class="value-tag">Computer Access Sandbox</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="card-actions">
+                <a href="https://github.com/SohamTilekar/fridayv2" target="_blank" class="card-btn">GitHub Source</a>
+            </div>
+        </article>
+
+        <!-- VidioPy -->
+        <article id="vidiopy" class="grid-card video-card">
+            <div class="card-header-wrapper">
+                <div class="card-header">
+                    <h2 class="card-title">VidioPy</h2>
+                    <span class="card-accent-badge">Python Library</span>
+                </div>
+                <p class="card-tagline">Programmatic Video Editor</p>
+            </div>
+            <div class="card-divider"></div>
+            
+            <div class="card-custom-content">
+                <div class="code-snippet-title"><i class="fab fa-python"></i> vidiopy_example.py</div>
+                <pre class="code-snippet"><code><span class="gig-keyword">from</span> <span class="gig-type">vidiopy</span> <span class="gig-keyword">import</span> VideoClip, TextClip
+
+<span class="gig-comment"># Read raw video clip</span>
+clip = <span class="gig-func">VideoClip</span>(<span class="gig-str">"raw_footage.mp4"</span>)
+
+<span class="gig-comment"># Edit the clip: overlay text at the bottom center</span>
+watermark = <span class="gig-func">TextClip</span>(<span class="gig-str">"Soham Tilekar"</span>, duration=clip.duration)
+edited_clip = clip.<span class="gig-func">overlay</span>(watermark, position=(<span class="gig-str">"center"</span>, <span class="gig-str">"bottom"</span>))
+
+<span class="gig-comment"># Save the final output</span>
+edited_clip.<span class="gig-func">write_videofile</span>(<span class="gig-str">"output.mp4"</span>)</code></pre>
+            </div>
+            
+            <div class="card-meta">
+                <div class="meta-row">
+                    <span class="meta-label">TECH</span>
+                    <span class="meta-value">Python &bull; FFmpeg &bull; PyPI</span>
+                </div>
+                <div class="meta-row text-desc">
+                    <span class="meta-label">BRIEF</span>
+                    <span class="meta-value">A developer-friendly PyPI library wrapping complex FFmpeg filtergraphs into intuitive, highly animateable Python object structures.</span>
+                </div>
+                <div class="meta-row">
+                    <span class="meta-label">FEATURES</span>
+                    <span class="meta-value tags-container">
+                        <span class="value-tag">Filtergraph Wrapper</span>
+                        <span class="value-tag">Animate via Lambda</span>
+                        <span class="value-tag">PyPI Release</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="card-actions">
+                <a href="https://github.com/SohamTilekar/vidiopy" target="_blank" class="card-btn">GitHub Source</a>
+            </div>
+        </article>
+    </main>
+
+    <!-- FOOTER & BOTTOM INFO -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="https://github.com/SohamTilekar" target="_blank" class="footer-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/soham-tilekar" target="_blank" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:sohamtilekar233@gmail.com" class="footer-link"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Soham Tilekar &bull; Handcrafted systems-level engineering hub.</p>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Fullscreen preview">
+    </div>
+
+    <!-- LIGHTBOX SCRIPT -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+        const closeBtn = document.querySelector('.lightbox-close');
+
+        triggers.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Code Carousel Logic for GigglyCode
+        let activeSnippetIndex = 0;
+        let carouselInterval;
+        const snippets = document.querySelectorAll('.carousel-snippet');
+        const snippetContainer = document.querySelector('.gigglycode-card .card-custom-content');
+        
+        window.nextGigglySnippet = function() {
+            if (snippets.length > 0) {
+                snippets.forEach(s => s.classList.remove('active'));
+                activeSnippetIndex = (activeSnippetIndex + 1) % snippets.length;
+                snippets[activeSnippetIndex].classList.add('active');
+            }
+        };
+
+        function startCarousel() {
+            carouselInterval = setInterval(window.nextGigglySnippet, 5000);
+        }
+        
+        if (snippetContainer) {
+            startCarousel();
+            snippetContainer.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+            snippetContainer.addEventListener('mouseleave', startCarousel);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resumes | Soham Tilekar</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <style>
+            .resume-selector-container {
+                max-width: 1000px;
+                margin: 4rem auto;
+                padding: 0 20px;
+            }
+
+            .selector-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .selector-header h1 {
+                font-size: 2.5rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                border: 4px solid var(--border);
+                background: #ffffff;
+                display: inline-block;
+                padding: 10px 20px;
+                box-shadow: 4px 4px 0px var(--border);
+                margin-bottom: 1.5rem;
+            }
+
+            .selector-header p {
+                font-size: 1.1rem;
+                color: var(--text-muted);
+                font-weight: 500;
+            }
+
+            .selector-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 30px;
+            }
+
+            .selector-card {
+                background: #ffffff;
+                border: 4px solid var(--border);
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                box-shadow: 4px 4px 0px var(--border);
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
+            }
+
+            /* Fixed shadow hover animation: when card translates (-4px, -4px), shadow expands (+4px, +4px) so it stays pinned */
+            .selector-card:hover {
+                transform: translate(-4px, -4px);
+                box-shadow: 8px 8px 0px var(--border);
+            }
+
+            .selector-card.general {
+                background-color: var(--video-accent);
+            }
+
+            .selector-card.riscv {
+                background-color: var(--arch-accent);
+            }
+
+            .selector-card.google {
+                background-color: var(--ai-accent);
+            }
+
+            .selector-card-header {
+                margin-bottom: 1.5rem;
+            }
+
+            .selector-card-badge {
+                font-family: var(--font-mono);
+                font-size: 11px;
+                font-weight: 800;
+                text-transform: uppercase;
+                border: 2px solid var(--border);
+                background: #ffffff;
+                padding: 4px 8px;
+                display: inline-block;
+                margin-bottom: 1rem;
+                box-shadow: 2px 2px 0px var(--border);
+            }
+
+            .selector-card-title {
+                font-size: 1.8rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                line-height: 1.2;
+                margin-bottom: 0.5rem;
+            }
+
+            .selector-card-subtitle {
+                font-family: var(--font-mono);
+                font-size: 0.95rem;
+                color: var(--text-muted);
+            }
+
+            .selector-card-body {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 2rem;
+                flex-grow: 1;
+            }
+
+            .selector-card-body ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .selector-card-body li {
+                margin-bottom: 8px;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .selector-card-body li i {
+                margin-top: 4px;
+                font-size: 14px;
+            }
+
+            .selector-card-action {
+                margin-top: auto;
+            }
+
+            .selector-btn {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                color: #000000;
+                background: #ffffff;
+                border: 3px solid var(--border);
+                padding: 12px;
+                font-weight: 800;
+                text-transform: uppercase;
+                box-shadow: 3px 3px 0px var(--border);
+                transition:
+                    transform 0.1s,
+                    box-shadow 0.1s;
+            }
+
+            .selector-btn:hover {
+                transform: translate(-2px, -2px);
+                box-shadow: 5px 5px 0px var(--border);
+            }
+
+            .selector-btn:active {
+                transform: translate(1px, 1px);
+                box-shadow: 2px 2px 0px var(--border);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-brand">SOHAM TILEKAR</div>
+            <div class="nav-links">
+                <a href="index.html#about" class="nav-link">ABOUT</a>
+                <a href="index.html#grid" class="nav-link">THE GRID</a>
+                <a href="resume.html" class="nav-link active highlighted-link"
+                    >RESUMES</a
+                >
+            </div>
+        </nav>
+
+        <main class="resume-selector-container">
+            <div class="selector-header">
+                <h1>Resume Profiles</h1>
+                <p>
+                    Select a targeted resume version designed to evaluate
+                    technical skills and projects.
+                </p>
+            </div>
+
+            <div class="selector-grid">
+                <!-- Master Resume -->
+                <article class="selector-card general">
+                    <div class="selector-card-header">
+                        <span class="selector-card-badge"
+                            >Comprehensive Profile</span
+                        >
+                        <h2 class="selector-card-title">Master Resume</h2>
+                        <p class="selector-card-subtitle">
+                            Complete Professional Details
+                        </p>
+                    </div>
+                    <div class="selector-card-body">
+                        <ul>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Contains all
+                                systems, AI, and web projects.
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Complete
+                                tech stack and education details.
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                General-purpose, comprehensive profile.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selector-card-action">
+                        <a href="Resume/MasterResume.html" class="selector-btn"
+                            >View Resume</a
+                        >
+                    </div>
+                </article>
+
+                <!-- QA Internship DMRocket Resume -->
+                <article class="selector-card riscv">
+                    <div class="selector-card-header">
+                        <span class="selector-card-badge"
+                            >Internship Specific</span
+                        >
+                        <h2 class="selector-card-title">DMRocket QA</h2>
+                        <p class="selector-card-subtitle">
+                            Product QA & Operations Profile
+                        </p>
+                    </div>
+                    <div class="selector-card-body">
+                        <ul>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Highlights Python, FastAPI, and React.
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Emphasizes API testing and UI debugging workflows.
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i> Styled using the Modern template.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selector-card-action">
+                        <a href="Resume/QA_Internship_DMRocket/resume_modern.html" class="selector-btn"
+                            >View Resume</a
+                        >
+                    </div>
+                </article>
+            </div>
+        </main>
+    </body>
+</html>
