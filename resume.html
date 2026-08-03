@@ -12,13 +12,13 @@
         <style>
             .resume-selector-container {
                 max-width: 1000px;
-                margin: 4rem auto;
+                margin: 3rem auto;
                 padding: 0 20px;
             }
 
             .selector-header {
                 text-align: center;
-                margin-bottom: 3rem;
+                margin-bottom: 2.5rem;
             }
 
             .selector-header h1 {
@@ -30,13 +30,55 @@
                 display: inline-block;
                 padding: 10px 20px;
                 box-shadow: 4px 4px 0px var(--border);
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
             }
 
             .selector-header p {
                 font-size: 1.1rem;
                 color: var(--text-muted);
                 font-weight: 500;
+                max-width: 650px;
+                margin: 0 auto 1.5rem auto;
+            }
+
+            .local-studio-banner {
+                background: #ffffff;
+                border: 4px solid var(--border);
+                padding: 14px 20px;
+                box-shadow: 4px 4px 0px var(--border);
+                margin-bottom: 2.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .local-studio-banner span {
+                font-family: var(--font-mono);
+                font-weight: 700;
+                font-size: 0.9rem;
+            }
+
+            .btn-studio {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background-color: var(--accent);
+                color: #000000;
+                border: 3px solid var(--border);
+                padding: 8px 16px;
+                font-weight: 800;
+                font-size: 12px;
+                text-transform: uppercase;
+                text-decoration: none;
+                box-shadow: 3px 3px 0px var(--border);
+                transition: transform 0.1s, box-shadow 0.1s;
+            }
+
+            .btn-studio:hover {
+                transform: translate(-2px, -2px);
+                box-shadow: 5px 5px 0px var(--border);
             }
 
             .selector-grid {
@@ -54,32 +96,20 @@
                 justify-content: space-between;
                 position: relative;
                 box-shadow: 4px 4px 0px var(--border);
-                transition:
-                    transform 0.2s,
-                    box-shadow 0.2s;
+                transition: transform 0.2s, box-shadow 0.2s;
             }
 
-            /* Fixed shadow hover animation: when card translates (-4px, -4px), shadow expands (+4px, +4px) so it stays pinned */
             .selector-card:hover {
                 transform: translate(-4px, -4px);
                 box-shadow: 8px 8px 0px var(--border);
             }
 
-            .selector-card.general {
-                background-color: var(--video-accent);
-            }
+            .selector-card.general { background-color: var(--video-accent); }
+            .selector-card.riscv { background-color: var(--arch-accent); }
+            .selector-card.google { background-color: var(--ai-accent); }
+            .selector-card.ai { background-color: #ddd6fe; }
 
-            .selector-card.riscv {
-                background-color: var(--arch-accent);
-            }
-
-            .selector-card.google {
-                background-color: var(--ai-accent);
-            }
-
-            .selector-card-header {
-                margin-bottom: 1.5rem;
-            }
+            .selector-card-header { margin-bottom: 1.5rem; }
 
             .selector-card-badge {
                 font-family: var(--font-mono);
@@ -147,19 +177,12 @@
                 font-weight: 800;
                 text-transform: uppercase;
                 box-shadow: 3px 3px 0px var(--border);
-                transition:
-                    transform 0.1s,
-                    box-shadow 0.1s;
+                transition: transform 0.1s, box-shadow 0.1s;
             }
 
             .selector-btn:hover {
                 transform: translate(-2px, -2px);
                 box-shadow: 5px 5px 0px var(--border);
-            }
-
-            .selector-btn:active {
-                transform: translate(1px, 1px);
-                box-shadow: 2px 2px 0px var(--border);
             }
         </style>
     </head>
@@ -177,79 +200,53 @@
 
         <main class="resume-selector-container">
             <div class="selector-header">
-                <h1>Resume Profiles</h1>
+                <h1>Resume Showcase</h1>
                 <p>
-                    Select a targeted resume version designed to evaluate
-                    technical skills and projects.
+                    Targeted resume profiles created for evaluating systems, compiler, and AI engineering skills.
                 </p>
             </div>
 
-            <div class="selector-grid">
-                <!-- Master Resume -->
-                <article class="selector-card general">
-                    <div class="selector-card-header">
-                        <span class="selector-card-badge"
-                            >Comprehensive Profile</span
-                        >
-                        <h2 class="selector-card-title">Master Resume</h2>
-                        <p class="selector-card-subtitle">
-                            Complete Professional Details
-                        </p>
-                    </div>
-                    <div class="selector-card-body">
-                        <ul>
-                            <li>
-                                <i class="fas fa-check-circle"></i> Contains all
-                                systems, AI, and web projects.
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i> Complete
-                                tech stack and education details.
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                General-purpose, comprehensive profile.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="selector-card-action">
-                        <a href="Resume/MasterResume.html" class="selector-btn"
-                            >View Resume</a
-                        >
-                    </div>
-                </article>
+            <!-- LOCAL STUDIO QUICK BANNER (Only visible when running local python server) -->
+            <div id="local-studio-banner" class="local-studio-banner" style="display: none;">
+                <span>🟢 <strong>Local Server Detected</strong>: Create & manage resumes in your local studio studio dashboard.</span>
+                <a href="admin.html" class="btn-studio"><i class="fas fa-sliders-h"></i> Open Local Resume Studio</a>
+            </div>
 
-                <!-- QA Internship DMRocket Resume -->
-                <article class="selector-card riscv">
+            <div class="selector-grid" id="selector-grid-container">
+<!-- Custom Resume: Systems & Compiler Engineer -->
+                <article class="selector-card riscv" data-slug="Systems_Compiler_Engineer">
                     <div class="selector-card-header">
-                        <span class="selector-card-badge"
-                            >Internship Specific</span
-                        >
-                        <h2 class="selector-card-title">DMRocket QA</h2>
-                        <p class="selector-card-subtitle">
-                            Product QA & Operations Profile
-                        </p>
+                        <span class="selector-card-badge">Systems & Compilers</span>
+                        <h2 class="selector-card-title">Systems & Compiler Engineer</h2>
+                        <p class="selector-card-subtitle">Low-Level LLVM Compiler & OS Kernel</p>
                     </div>
                     <div class="selector-card-body">
                         <ul>
-                            <li>
-                                <i class="fas fa-check-circle"></i> Highlights Python, FastAPI, and React.
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i> Emphasizes API testing and UI debugging workflows.
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i> Styled using the Modern template.
-                            </li>
+                            <li><i class="fas fa-check-circle"></i> Engineers LLVM 17 C++ compiler pipeline producing native machine binaries.</li>
+                            <li><i class="fas fa-check-circle"></i> Implements isolated execution sandboxes with ProcessBuilder (-Xmx64m).</li>
+                            <li><i class="fas fa-check-circle"></i> Styled using the Modern ATS template.</li>
                         </ul>
                     </div>
-                    <div class="selector-card-action">
-                        <a href="Resume/QA_Internship_DMRocket/resume_modern.html" class="selector-btn"
-                            >View Resume</a
-                        >
+                    <div class="selector-card-action" style="display: flex; gap: 8px;">
+                        <a href="Resume/Systems_Compiler_Engineer/resume.html" class="selector-btn" style="flex: 1;">View Resume</a>
                     </div>
                 </article>
+                <!-- Resume cards created via Local Studio will be registered here -->
             </div>
         </main>
+
+        <script>
+            // Check if running on local python server
+            fetch('/api/status')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'online') {
+                        document.getElementById('local-studio-banner').style.display = 'flex';
+                    }
+                })
+                .catch(() => {
+                    // Static mode (GitHub Pages) - banner stays hidden
+                });
+        </script>
     </body>
 </html>

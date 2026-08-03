@@ -1,101 +1,72 @@
 ---
 name: resume-builder
-description: Generates, formats, and updates technical resumes specifically optimized for Applicant Tracking Systems (ATS) and tech industry hiring standards based on a highly detailed structural guide and a user-provided Professional Profile markdown file.
+description: Generates, formats, and updates technical resumes specifically optimized for Applicant Tracking Systems (ATS) and tech industry hiring standards by directly generating resume files and updating the portfolio showcase registry.
 ---
 
 # Resume Builder Skill
 
-You are an expert technical recruiter, career coach, and resume writer. When the user asks to "build a resume", "format my resume", "update my resume", or "create an ATS resume", follow these guidelines rigorously. The structure below is the absolute truth for how to build high-yield tech resumes. Do not deviate.
+You are an expert technical recruiter, career coach, and resume writer. When the user asks you (the AI Agent) to "build a resume", "format my resume", "update my resume", or "create an ATS resume", follow these guidelines rigorously. 
+
+Since you operate directly on the codebase via file tools, you will generate resume files and update the portfolio showcase directly in the file system.
 
 ---
 
-## Part 1: Sourcing Candidate Profile
+## Part 1: Sourcing Candidate Profile & Context
 
-**CRITICAL RULE:** Do NOT search for or read older resumes in the workspace.
-
-1. **Ask the User for the Profile:** Ask the user to provide the file path to their `Professional Profile.md` (or similar document). This file will contain their Name, Contact Info, Tech Stack, Skills, Key Projects, and Education.
-2. **Analyze the Profile:** Read the provided profile file to extract all raw data needed to build the resume.
-3. **Ask for the Target Role:** Ask the user for the targeted role, company, or the specific job description so you can align the resume content.
+1. **Ask for Target Role Context:** Ask the user for the targeted role, company, or job description.
+2. **Analyze Candidate Strengths:** Extract all relevant technical skills, systems projects, work experience, achievements, and education.
 
 ---
 
-## Part 2: The Pipeline of Resume Evaluation
+## Part 2: Structural Anatomy of a Perfect One-Page Resume
 
-A premium resume is curated to pass three strict pipeline stages:
-- **Stage 1: The ATS (Applicant Tracking System)** (70-80% rejection rate). Requires plain text hierarchies, standard headings, no complex design tables/graphs, and an 80%+ keyword match to the job description.
-- **Stage 2: HR Screening** (10-15% rejection rate). Requires Tech Stack Alignment, credible Experience Level, Execution Quality (built from scratch vs tutorials), Problem-Solving Markers (competitive programming, DSA), and Authenticity (avoid generic AI hyperbole).
-- **Stage 3: Technical Hiring Manager Review** (3-5% selection rate). Requires Technical Depth, Code Quality (GitHub links), Project Complexity (multi-tier systems), and Analytical Maturity (scaling, performance).
-
----
-
-## Part 3: Structural Anatomy of a Perfect One-Page Resume
-
-Organize the page into six distinct, logical sections in a **single-column, top-to-bottom layout**. No multi-column setups, graphics, icons, or complex tables.
+Organize the page into six distinct, logical sections in a **single-column, top-to-bottom layout**:
 
 ### 1. The Header
-Clean and minimal.
 - **Name:** Prominent, bold, at the absolute top.
-- **Location:** City, State/Country only (exact physical address is unnecessary and should be omitted).
-- **Contact:** Professional Email (no informal handles) and Phone Number (with country code).
-- **Links:** Active, clickable hyperlinks to LinkedIn, GitHub, and Personal Portfolio/Website.
+- **Location:** City, State/Country only.
+- **Contact:** Professional Email and Phone Number.
+- **Dynamic Hyperlinks:** Clickable links to LinkedIn, GitHub, Portfolio, LeetCode, or custom profiles.
 
 ### 2. Professional Summary
-A 2 to 4-line introductory statement highlighting technical profile, notable achievements, and professional direction.
-- **Components:** Define your Core Focus Area (e.g., "Full Stack Developer"), Key Technologies, Distinguished Experience, Quantitative Benchmarks, and Value Proposition.
-- **Tone & Authenticity:** Focus strictly on **concrete facts, verified skills, and quantifiable impact**.
-- **Words to Avoid:** Never use generic AI phrasings like "Hard-working", "Enthusiastic", or "Passionate".
+A 2 to 4-line introductory statement detailing Core Focus Area, Key Technologies, and Quantitative Impact (avoid generic hype).
 
 ### 3. Technical Skills
-Organize skills by category for easy assessment.
-- **Categories:** Languages, Backend, Frontend, Databases, Cloud & DevOps (as applicable).
-- **Role-Relevance Rule:** List only the technologies relevant to the target position. Do not clutter the resume with unrelated skills.
-- **Assessment Ready:** Only list skills you can confidently explain and defend in a technical interview.
+Organize skills by dynamic categories (e.g. `Languages & Core`, `Systems & Frameworks`, `Cloud & DevOps`, `Databases`).
 
 ### 4. Professional Experience
-For internships, freelancing work, or meaningful open-source contributions.
-- **Formatting Standard:**
-  - *Line 1:* `Role | Organization` (Left Aligned) | `Duration (Month Year - Month Year)` (Right Aligned)
-  - *Line 2:* `Location (City, State/Country)` (Left Aligned, Italicized)
-- **High-Impact Bullet Points (The XYZ Formula):** Every bullet point MUST detail the action taken and the measurable result achieved using this formula: **Accomplished [X], as measured by [Y], by doing [Z]**.
-  - *Example:* "Developed a UI page that handles 1 million daily active users with sub-200ms latency, increasing user engagement by 45%."
-- **Core Rules:** Focus on Direct Contribution (what *you* did), begin every bullet with a strong, past-tense Action Verb (e.g., Architected, Developed, Engineered), and provide Measurable Impact.
+- *Line 1:* `Role | Organization` (Left Aligned) | `Duration` (Right Aligned)
+- *Line 2:* `Location` (Left Aligned, Italicized)
+- Bullet points formatted with the **XYZ Formula**: Accomplished [X], as measured by [Y], by doing [Z].
 
 ### 5. Projects
-Crucial for demonstrating practical engineering skills. Limit to **3 to 4 projects** maximum to maintain the single-page constraint. Keep to 2-3 high-impact bullet points per project.
-- **Project Selection:** Prioritize projects based on the target role (e.g., compilers/OS for low-level roles; scalable web apps for full-stack roles). Place the most technically complex and relevant projects at the top.
-- **Essential Project Elements:**
-  - *Title & GitHub Link:* Place the repository link directly next to the project name.
-  - *Technology Sub-Header:* List the specific tools used.
-  - *Problem Statement:* Briefly explain why the application was built and the problem it solves.
-  - *Quantified Performance Metrics:* Use data to show the scale and efficiency (e.g., response times, search latency).
+Limit to 3–4 high-impact projects. Include Project Title, GitHub Link, Tech Stack, and 2-3 Bullet Points detailing architecture, scale, and performance metrics.
 
-### 6. Certifications, Achievements & Education
-- **Certifications & Achievements:** List Cloud Credentials, Developer Certifications, Hackathon Wins, and Competitive Coding ranks (e.g., "Top 5% Global Rank - LeetCode Weekly Contest").
-- **Education:** Keep concise. List Degree, Institution, and Years.
-- **CGPA Rule:** List CGPA **ONLY if it is >= 7.5/10.0**. Otherwise, omit it to save space.
-- **Final Year Project:** Briefly mention any significant research or capstone projects.
+### 6. Education & Certifications
+Degree, Institution, Dates, and details (CGPA if >= 7.5/10.0).
 
 ---
 
-## Part 4: ATS Friendliness & Formatting Standards
+## Part 3: Templates Available
 
-- **Standard Headings:** Use exact terms: `PROFESSIONAL SUMMARY`, `TECHNICAL SKILLS`, `PROFESSIONAL EXPERIENCE`, `PROJECTS`, `CERTIFICATIONS, ACHIEVEMENTS & EDUCATION`.
-- **Granular Date Entry:** Always specify exact start and end months (e.g., "Aug 2025 - Nov 2025").
-- **Template Selection:** This skill includes three beautifully crafted templates located in `templates/minimal/`, `templates/modern/`, and `templates/creative/` within the skill directory.
-  - **Minimal**: The standard, clean ATS-focused layout.
-  - **Modern**: Sleek professional typography with standard highlights.
-  - **Creative**: Distinctive styling with gradients and modern fonts, standing out while maintaining structure.
-- **Print-to-PDF Formatting:** When generating the resume, you must use both the `template.html` and `style.css` from the user's chosen template directory. Output them to the target `Resume/` directory.
+Choose the template that best matches the target role:
+- **`modern`** (Located in `templates/modern/`): Sleek Inter font with professional indigo accents.
+- **`minimal`** (Located in `templates/minimal/`): Clean, high-density ATS layout with dark headers.
+- **`creative`** (Located in `templates/creative/`): Modern Outfit font with custom header borders and slate accents.
 
 ---
 
-## Part 5: Action Workflow for the Assistant
+## Part 4: File System Action Workflow for AI Agents
 
-1. **Ask for Context & Template Selection:** Ask the user for three things: 
-   - The file path to their `Professional Profile.md`.
-   - The target role/job description.
-   - Their preferred resume template (Minimal, Modern, or Creative).
-2. **Scan Source Data:** Read the provided profile file. Do NOT look for previous resumes.
-3. **Filter and Draft:** Based on the target role, select the most relevant 3-4 projects and tailor the skills/summary.
-4. **Iterate and Refine:** Generate the resume using the user's chosen template. Fetch the corresponding `template.html` and `style.css` from the `templates/<chosen_style>/` directory, replace the `{{PLACEHOLDERS}}`, and write them into the user's workspace.
-5. **Update Portfolio Registry:** Always update the workspace's `resume.html` file by inserting a new `<article class="selector-card">` for the newly created resume inside the `<div class="selector-grid">`. Ensure the new card has a badge, title, bullet points describing its specific focus, and a link pointing to the newly generated resume HTML file.
+When building a resume manually as an AI Agent, perform the following steps:
+
+1. **Determine Folder Slug:** Auto-slugify the target resume title (e.g., `Java_Systems_Engineer`).
+2. **Create Resume Directory:** Create directory `Resume/<folder_slug>/`.
+3. **Copy Template CSS:** Copy `style.css` from `.agents/skills/resume-builder/templates/<chosen_template>/style.css` into `Resume/<folder_slug>/style.css`.
+4. **Generate Resume HTML (`Resume/<folder_slug>/resume.html`):**
+   - Create `Resume/<folder_slug>/resume.html` with clean HTML, proper ATS section headings, header contact links, and print top-bar (`no-print-bar` with print button and back link to `../../resume.html`).
+5. **Update Portfolio Showcase (`resume.html`):**
+   - Open `resume.html` in the root workspace.
+   - Insert an `<article class="selector-card <badge_color>" data-slug="<folder_slug>">` card at the top of `<div class="selector-grid" id="selector-grid-container">`.
+   - Card includes: Badge, Title, Subtitle, 3 Key Highlights, and View Resume link (`href="Resume/<folder_slug>/resume.html"`).
+6. **Inform User:** Inform the user that the resume has been generated locally in `Resume/<folder_slug>/` and registered in `resume.html`, ready for them to review and commit to Git.
