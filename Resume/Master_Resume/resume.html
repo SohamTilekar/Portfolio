@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Tilekar — Master Resume (Complete Project Ledger)</title>
+    <meta name="description" content="Master Resume of Soham Tilekar — Systems, Compiler, Full-Stack & AI Engineer. Comprehensive project ledger covering all 13 open-source projects.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── No-Print Top Bar ── */
+        .no-print-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #e2e8f0;
+            padding: 11px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 13px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            margin-bottom: 20px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .no-print-bar .bar-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .no-print-bar .bar-left span {
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .bar-badge {
+            background: rgba(59,130,246,0.25);
+            border: 1px solid rgba(59,130,246,0.5);
+            color: #93c5fd;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .bar-actions { display: flex; gap: 8px; align-items: center; }
+        .bar-actions a, .bar-actions button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.1);
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 7px 14px;
+            font-family: inherit;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 12.5px;
+            transition: all 0.18s ease;
+            letter-spacing: 0.2px;
+        }
+        .bar-actions a:hover, .bar-actions button:hover {
+            background: rgba(255,255,255,0.18);
+            border-color: rgba(255,255,255,0.4);
+            color: #ffffff;
+        }
+        .bar-actions .btn-print {
+            background: #1d4ed8;
+            border-color: #3b82f6;
+            color: #fff;
+        }
+        .bar-actions .btn-print:hover {
+            background: #2563eb;
+            border-color: #60a5fa;
+        }
+        @media print {
+            .no-print-bar { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── No-Print Bar ── -->
+    <div class="no-print-bar">
+        <div class="bar-left">
+            <span class="bar-badge">Master Resume</span>
+            <span>&#128196; Soham Tilekar — Complete Project Ledger (14 Projects)</span>
+        </div>
+        <div class="bar-actions">
+            <a href="../../resume.html">&#8592; Back to Showcase</a>
+            <button class="btn-print" onclick="window.print()">&#128424; Print / Save PDF</button>
+        </div>
+    </div>
+
+    <!-- ── Resume Body ── -->
+    <div class="container">
+
+        <!-- ── HEADER ── -->
+        <header>
+            <h1>Soham Tilekar</h1>
+            <div class="contact-info">
+                <span>Pune District, Maharashtra, India</span>
+                <span class="sep">|</span>
+                <a href="mailto:sohamtilekar233@gmail.com">sohamtilekar233@gmail.com</a>
+                <span class="sep">|</span>
+                <a href="https://www.linkedin.com/in/soham-tilekar" target="_blank">linkedin.com/in/soham-tilekar</a>
+                <span class="sep">|</span>
+                <a href="https://github.com/SohamTilekar" target="_blank">github.com/SohamTilekar</a>
+                <span class="sep">|</span>
+                <a href="https://sohamtilekar.github.io/Portfolio/" target="_blank">sohamtilekar.github.io/Portfolio</a>
+            </div>
+        </header>
+
+        <!-- ── PROFESSIONAL SUMMARY ── -->
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>
+                Versatile Software Engineer with hands-on experience across Systems Programming, Compiler Construction, Android Development, Full-Stack Web Engineering, and AI Systems. Independently architected and shipped <strong>14+ open-source projects</strong> spanning Android accessibility tools (Kotlin), 32-bit x86 OS kernels (C/NASM), LLVM IR compilers (C++23), real-time multiplayer platforms (Java 17 WebSockets), React 19 client-side web studios, cryptographic TUI tools, Godot 4 RPGs, and LangChain AI assistants. Proficient in zero-trust privacy architectures, Docker container sandboxing, low-latency concurrent systems, PyPI package distribution, and CI/CD deployment via GitHub Actions.
+            </p>
+        </section>
+
+        <!-- ── TECHNICAL SKILLS ── -->
+        <section class="skills">
+            <h2>Technical Skill Matrix</h2>
+            <ul class="skills-list">
+                <li><strong>Systems &amp; Low-Level Languages:</strong> C++ (C++23), C, Rust, Assembly (x86 / i386, NASM, Custom RISC), LLVM IR, Linker Scripts, Makefile, CMake</li>
+                <li><strong>Application &amp; Web Languages:</strong> Kotlin, Python 3, Java 17, TypeScript 5, JavaScript (ES6+), GDScript, GDShader, HTML5, CSS3</li>
+                <li><strong>Frameworks &amp; UI Engines:</strong> Android SDK (Accessibility Services, SharedPreferences, System Window Overlays), React 19, Vite 6, Tailwind CSS v4, FastAPI, Flask, Uvicorn, Godot Engine 4 (C# / GDScript), HTML5 Canvas API, CustomTkinter</li>
+                <li><strong>Systems Architecture &amp; Security:</strong> Real-Time UI Node Tree Parsing, 32-bit Monolithic Kernel Architecture, Custom CPU Design (TTL &amp; Logisim), Compiler Construction (LLVM IR Codegen, Itanium ABI), Hardware Emulators, AES-GCM / PBKDF2 Cryptography</li>
+                <li><strong>AI, ML &amp; Vector Engineering:</strong> Agentic AI Tools, LangChain, Groq API, Google Gemini AI, Milvus Vector DB, Arxiv / PubMed APIs, PyMuPDF, Pydantic</li>
+                <li><strong>Multimedia &amp; Data Processing:</strong> FFmpeg, OpenCV, VidioPy Engine, MoviePy, Pillow (PIL), NumPy, Canvas Confetti</li>
+                <li><strong>Tools, Infrastructure &amp; Testing:</strong> Gradle, Android Studio / Gradle CLI, Docker, Git / GitHub, Linux Systems Programming, QEMU, Oxlint, Vitest, Maven, CustomASM, Rich, MkDocs, PyPI Packaging</li>
+            </ul>
+        </section>
+
+        <!-- ── COMPREHENSIVE PROJECT LEDGER ── -->
+        <section class="projects">
+            <h2>Comprehensive Project Ledger</h2>
+
+            <!-- 1. ReelLock -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>ReelLock</strong> &mdash; Instagram Reels Blocker for Android &nbsp;|&nbsp; <a href="https://sohamtilekar.github.io/ReelLock/" target="_blank">Docs</a> &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/ReelLock" target="_blank">GitHub</a></span>
+                    <span class="right-side">Jan 2026 &ndash; Feb 2026</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Kotlin, Android Accessibility Services, Android SDK (API 24+), SharedPreferences, System Window Overlays, Gradle, MkDocs, GitHub Actions
+                </div>
+                <ul>
+                    <li>Engineered ReelLock, an open-source Android digital wellbeing application that blocks Instagram Reels in real time using Android Accessibility Services to analyze UI node trees without root access.</li>
+                    <li>Implemented three configurable intervention modes: instant system back-navigation (<code>GLOBAL_ACTION_BACK</code>), launcher redirect (Home intent), and non-bypassable system alert overlays.</li>
+                    <li>Enforced zero network permissions (<code>INTERNET</code> permission omitted) and zero keylogging/text-reading for 100% privacy-first local operation.</li>
+                    <li>Published automated MkDocs documentation pipeline on GitHub Pages and released pre-compiled release APKs.</li>
+                </ul>
+            </div>
+
+            <!-- 1. GigglyCode -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>GigglyCode</strong> &mdash; C++23 / LLVM Compiler &amp; Language Runtime &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/GigglyCode" target="_blank">GitHub</a></span>
+                    <span class="right-side">Dec 2024 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: C++23, LLVM IR Codegen, Compiler Design (Lexer / Parser / AST / Codegen), Itanium ABI Exception Handling, Reference Counting GC, CMake, AddressSanitizer, UBSan
+                </div>
+                <ul>
+                    <li>Architected GigglyCode, a multi-language interoperable programming language compiler targeting LLVM IR, written entirely in modern C++23 with a complete lexer, parser, type checker, and IR code-generation pipeline.</li>
+                    <li>Built native Linux structured exception handling (<code>try</code> / <code>catch</code> / <code>raise</code>) using Itanium ABI personality functions, LLVM landing pads, and unwind tables for zero-cost exception propagation.</li>
+                    <li>Implemented automatic memory management via reference counting runtime, integrated C++23 standard library, and validated correctness under AddressSanitizer (ASan) and Undefined Behavior Sanitizer (UBSan) suites.</li>
+                </ul>
+            </div>
+
+            <!-- 2. TilekarOS -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>TilekarOS</strong> &mdash; 32-Bit x86 Monolithic Kernel &nbsp;|&nbsp; <a href="https://sohamtilekar.github.io/TilekarOS/" target="_blank">Docs</a> &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/TilekarOS" target="_blank">GitHub</a></span>
+                    <span class="right-side">Nov 2025 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: C, Assembly (x86 / NASM), GDT / IDT Interrupt Handling, PIC Driver, Paging Virtual Memory Allocator, VFS, System Calls, Custom libc, QEMU, GCC Cross-Compiler, CMake
+                </div>
+                <ul>
+                    <li>Developed TilekarOS, a 32-bit monolithic x86 operating system kernel from scratch in C and NASM Assembly, running inside QEMU virtual machine environments with full ring-0 to ring-3 privilege transitions.</li>
+                    <li>Implemented complete low-level kernel subsystems: Global Descriptor Table (GDT), Interrupt Descriptor Table (IDT), PIC 8259A interrupt controller, paging-based virtual memory allocator with <code>malloc</code> / <code>free</code>, system call dispatch table, and Virtual File System (VFS) layer.</li>
+                    <li>Built a custom userspace standard C library (<code>libc</code>) and successfully bootstrapped ring-3 user programs with full privilege isolation, verifying kernel correctness across interrupt and syscall boundaries.</li>
+                </ul>
+            </div>
+
+            <!-- 3. CodeArena -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>CodeArena</strong> &mdash; Real-Time Multiplayer Competitive Programming Platform &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/CodeArena" target="_blank">GitHub</a></span>
+                    <span class="right-side">May 2026 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Java 17 (Custom HTTP &amp; WebSocket Server), Docker Containerization, Vanilla JS / CSS3, Concurrent Programming, Sandboxed Code Execution
+                </div>
+                <ul>
+                    <li>Engineered CodeArena, a zero-framework real-time multiplayer competitive programming platform in raw Java 17 &mdash; implementing custom HTTP request routing and WebSocket upgrade handshake handlers from the socket layer up.</li>
+                    <li>Architected a low-latency 1v1 duel matchmaking engine with real-time shared-state synchronization using custom Java WebSocket message framing and concurrent thread-safe data structures.</li>
+                    <li>Integrated a sandboxed multi-language code execution engine running contestant submissions inside isolated Docker containers with enforced CPU time, memory heap, and wall-clock runtime limits.</li>
+                </ul>
+            </div>
+
+            <!-- 4. LensDiff (DiffLens) -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>LensDiff (DiffLens)</strong> &mdash; Visual Image Comparison Web Studio &nbsp;|&nbsp; <a href="https://sohamtilekar.github.io/" target="_blank">Live</a> &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/SohamTilekar.github.io" target="_blank">GitHub</a></span>
+                    <span class="right-side">July 2026 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: React 19, TypeScript 5, Vite 6, Tailwind CSS v4, HTML5 Canvas API, Lucide React, Oxlint, Vitest, GitHub Actions / Pages
+                </div>
+                <ul>
+                    <li>Developed DiffLens, a high-performance 100% client-side visual image comparison web studio in React 19, TypeScript 5, and Vite 6, achieving zero-latency rendering with no cloud file uploads or server tracking.</li>
+                    <li>Architected a multi-mode inspection engine with split-slider, side-by-side, onion-skin, and high-frequency blink diffing modes &mdash; all rendered via HTML5 Canvas API with browser Object URLs for instant frame composition.</li>
+                    <li>Automated production CI/CD pipeline via GitHub Actions with full Oxlint linting and Vitest unit test gates, deploying optimized builds to GitHub Pages on every merge.</li>
+                </ul>
+            </div>
+
+            <!-- 5. SS32 -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>SS32</strong> &mdash; Custom 32-Bit TTL CPU Architecture &amp; Rust Hardware Emulator &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/SS32" target="_blank">GitHub</a></span>
+                    <span class="right-side">June 2024 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Computer Architecture, TTL Logic Design, Logisim, Rust, CustomASM, Assembly, Binary Encoding, Python Media Processing
+                </div>
+                <ul>
+                    <li>Designed SS32, a custom 32-bit TTL minicomputer CPU with a 32-bit data bus, 23-bit address space, and 9-bit variable-length instruction set, fully simulated in Logisim with physical TTL logic gate accuracy.</li>
+                    <li>Defined a complete custom assembly language specification using CustomASM (<code>astCPU.asm</code>) and wrote Python transformation scripts to encode video frames and images into ROM binary payloads for display buffer rendering.</li>
+                    <li>Built a high-speed hardware emulator in Rust implementing the full instruction decode, execute, and memory-mapped display buffer pipeline for cycle-accurate behavioral simulation.</li>
+                </ul>
+            </div>
+
+            <!-- 6. VidioPy -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>VidioPy</strong> &mdash; Open-Source Programmatic Video Editing Library &nbsp;|&nbsp; <a href="https://sohamtilekar.github.io/vidiopy/" target="_blank">Docs</a> &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/vidiopy" target="_blank">GitHub</a></span>
+                    <span class="right-side">Feb 2024 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Python 3.x, FFmpeg, FFmpegIO, NumPy, Pillow (PIL), Rich, MkDocs, mkdocstrings, PyPI Packaging
+                </div>
+                <ul>
+                    <li>Built VidioPy, an open-source Python video editing and programmatic composition library designed as a modern, lightweight alternative to MoviePy &mdash; published and maintained on PyPI.</li>
+                    <li>Optimized high-throughput frame transformation and audio overlay pipelines leveraging NumPy array batch processing and FFmpegIO streaming integration for efficient in-memory video composition.</li>
+                    <li>Authored comprehensive autogenerated API documentation using MkDocs and <code>mkdocstrings</code>, producing a clean publicly hosted reference site and clean PyPI release workflows.</li>
+                </ul>
+            </div>
+
+            <!-- 7. JPassMan -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>JPassMan</strong> &mdash; Cryptographic TUI Offline Password Manager &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/JPassMan" target="_blank">GitHub</a></span>
+                    <span class="right-side">Oct 2025 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Pure Java 17 (<code>javax.crypto</code>), AES-256-GCM Encryption, PBKDF2WithHmacSHA256 Key Derivation, Mouse-Enabled TUI Engine, Maven, Zero-Dependency Architecture
+                </div>
+                <ul>
+                    <li>Built JPassMan, a zero-dependency offline CLI/TUI password manager in pure Java 17 &mdash; no external libraries, relying entirely on the JDK standard library for all cryptographic and UI operations.</li>
+                    <li>Enforced bank-grade cryptographic security using <code>AES/GCM/NoPadding</code> authenticated encryption paired with <code>PBKDF2WithHmacSHA256</code> key derivation at 65,536 iterations with a 16-byte random salt per vault.</li>
+                    <li>Designed a fully mouse-enabled interactive Terminal User Interface (TUI) with seamless credential CRUD management, timed clipboard auto-clear, and master password lock with brute-force delay protection.</li>
+                </ul>
+            </div>
+
+            <!-- 8. RayaMan -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>RayaMan</strong> &mdash; Procedural Action RPG &amp; Dynamic AI Story Director &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/Raya-Man" target="_blank">GitHub</a></span>
+                    <span class="right-side">Aug 2025 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Godot Engine 4.x, C# (.NET), GDScript, GDShader, Dynamic AI Director System, Entity Component Architecture, Game Physics &amp; Hitboxes
+                </div>
+                <ul>
+                    <li>Designed and developed RayaMan, a procedurally generated medieval fantasy Action RPG in Godot 4 using a hybrid C# and GDScript architecture with custom Entity Component patterns.</li>
+                    <li>Implemented a dynamic AI Story Director that samples player combat KPIs (damage dealt, survivability, clear speed) to dynamically adjust threat level, enemy spawn density, and narrative arc progression in real time.</li>
+                    <li>Built custom HUD UI, stat progression and leveling system, equipment inventory, dynamic hitbox collision layers, and custom GDShaders for 2D lighting and 3D particle visual effects.</li>
+                </ul>
+            </div>
+
+            <!-- 9. Portfolio & Local Resume Studio -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>Portfolio &amp; Local Resume Studio</strong> &mdash; Neo-Brutalist Developer Portfolio &nbsp;|&nbsp; <a href="https://sohamtilekar.github.io/Portfolio/" target="_blank">Live</a> &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/Portfolio" target="_blank">GitHub</a></span>
+                    <span class="right-side">May 2026 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Python 3, Flask, HTML5, CSS3 (Neo-Brutalist Design System), Docker, GitHub Pages, Agentic AI Skill Integration
+                </div>
+                <ul>
+                    <li>Engineered a responsive Neo-Brutalist developer portfolio and local Resume Studio using a Python/Flask backend that dynamically renders and manages HTML/CSS resume templates from agentic skill definitions.</li>
+                    <li>Implemented a local containerized development environment via Docker and an automated static deployment pipeline to GitHub Pages delivering 100% uptime with zero server-side runtime costs.</li>
+                </ul>
+            </div>
+
+            <!-- 10. Wardrobe AI -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>Wardrobe AI</strong> &mdash; FastAPI Outfit Recommendation Engine &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/Wardrobe-AI" target="_blank">GitHub</a></span>
+                    <span class="right-side">June 2026</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Python 3, FastAPI, Uvicorn, Pydantic, Jinja2, Vanilla JavaScript, Glassmorphism CSS, REST API Architecture
+                </div>
+                <ul>
+                    <li>Created Wardrobe AI, a local-first wardrobe cataloging and outfit recommendation engine powered by FastAPI and Pydantic data modeling with a clean REST API.</li>
+                    <li>Developed a multi-factor fashion scoring algorithm evaluating color harmony, per-item laundry availability state, and contextual event suitability (casual college, outdoor treks, formal settings).</li>
+                    <li>Designed a modern dark-mode Glassmorphism web UI using Vanilla JS and CSS custom properties for fast clothing logging, filtering, and one-click daily outfit recommendations.</li>
+                </ul>
+            </div>
+
+            <!-- 11. Friday v2 -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>Friday v2</strong> &mdash; Personal AI Assistant &amp; Tool Execution Framework &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/fridayv2" target="_blank">GitHub</a></span>
+                    <span class="right-side">Feb 2025 &ndash; Apr 2025</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Python 3, Flask, JavaScript, HTML5 / CSS3, Modular Tool Framework, Web Scraping, Prompt Engineering
+                </div>
+                <ul>
+                    <li>Built Friday v2, a modular personal AI assistant and tool execution framework in Python and Flask with a plugin-style architecture enabling easy extension via registered tool handlers.</li>
+                    <li>Designed a dynamic multi-panel web UI supporting concurrent chat sessions, background task scheduling, structured prompt engineering pipelines, and integrated deep research web-scraping tools.</li>
+                </ul>
+            </div>
+
+            <!-- 12. Friday v1 -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>Friday v1</strong> &mdash; LangChain &amp; Milvus Vector Desktop AI Assistant &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/friday" target="_blank">GitHub</a></span>
+                    <span class="right-side">Aug 2024 &ndash; Dec 2024</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Python 3, LangChain, Groq API, Google Gemini AI, Milvus Vector DB, CustomTkinter, Arxiv API, PubMed API, PyMuPDF, Rich
+                </div>
+                <ul>
+                    <li>Engineered Friday v1, a local desktop AI assistant integrating LangChain orchestration, Groq API inference, Google Gemini multimodal AI, and Milvus vector database for semantic PDF document search and retrieval.</li>
+                    <li>Developed automated background workflows for email inbox reading, calendar reminder alerts, and scientific paper discovery via Arxiv and PubMed APIs with PyMuPDF-powered document parsing.</li>
+                </ul>
+            </div>
+
+            <!-- 13. Mini Projects Collection -->
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>Mini Projects Collection</strong> &mdash; Multiplayer Chess, CLI Games, Spatial Engine &nbsp;|&nbsp; <a href="https://github.com/SohamTilekar/mini_project" target="_blank">GitHub</a></span>
+                    <span class="right-side">Jan 2024 &ndash; Sept 2024</span>
+                </div>
+                <div class="item-sub">
+                    Tech Stack: Python 3, Flask, WebSockets, HTML5 / CSS3, CLI Frameworks
+                </div>
+                <ul>
+                    <li>Created Online Multiplayer Chess with real-time room creation, player matchmaking, and a full chess move-validation rules engine using Flask WebSockets for bidirectional game-state synchronization.</li>
+                    <li>Developed a collection of CLI tools including a Snake game, Python Text Editor, scientific Calculator, and a spatial 2D Cloth Packing optimizer using greedy geometry algorithms.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- ── EDUCATION ── -->
+        <section class="education">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="left-side"><strong>Bachelor of Technology (B.Tech) &mdash; Computer Science Engineering</strong></span>
+                    <span class="right-side">Aug 2025 &ndash; Jul 2029</span>
+                </div>
+                <div class="item-sub">
+                    <span>Pimpri Chinchwad University (PCU), Pune District, Maharashtra, India</span>
+                    <span>Current: 3rd Semester &nbsp;|&nbsp; FY CGPA: 7.95 / 10.0</span>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /.container -->
+</body>
+</html>

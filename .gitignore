@@ -32,3 +32,6 @@ Thumbs.db
 coverage/
 .parcel-cache/
 .cache/
+__pycache__/
+*.pyc
+

@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+    --text-main:    #0f172a;
+    --text-muted:   #475569;
+    --text-light:   #64748b;
+    --link-color:   #1d4ed8;
+    --accent:       #1e3a8a;
+    --accent-light: #3b82f6;
+    --rule-color:   #cbd5e1;
+    --bg:           #ffffff;
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 9.4pt;
+    line-height: 1.42;
+    color: var(--text-main);
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+@page {
+    size: A4;
+    margin: 11mm 14mm 11mm 14mm;
+}
+
+/* ─── Container ─────────────────────────────────────────────────────────────── */
+.container {
+    max-width: 870px;
+    margin: 0 auto;
+    padding: 0 16px 32px 16px;
+}
+
+/* ─── Header ────────────────────────────────────────────────────────────────── */
+header {
+    text-align: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    display: block;
+    margin: 8px auto 0 auto;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent-light) 50%, var(--accent) 80%, transparent);
+}
+
+header h1 {
+    font-size: 22pt;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 5px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contact-info {
+    font-size: 8.8pt;
+    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px 10px;
+}
+
+.contact-info a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover { text-decoration: underline; }
+
+.contact-info .sep {
+    color: var(--rule-color);
+    font-weight: 300;
+}
+
+/* ─── Section headings ──────────────────────────────────────────────────────── */
+section { margin-bottom: 13px; }
+
+h2 {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin: 0 0 7px 0;
+    padding-bottom: 3px;
+    border-bottom: 1.5px solid var(--rule-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+h2::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* ─── Summary ───────────────────────────────────────────────────────────────── */
+.summary p {
+    margin: 0;
+    text-align: justify;
+    font-size: 9.2pt;
+    line-height: 1.48;
+    color: var(--text-main);
+}
+
+/* ─── Skills ────────────────────────────────────────────────────────────────── */
+.skills-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skills-list li {
+    font-size: 9.1pt;
+    line-height: 1.38;
+}
+
+.skills-list li strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ─── Items (projects / experience / education) ─────────────────────────────── */
+.item {
+    margin-bottom: 9px;
+    page-break-inside: avoid;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 9.8pt;
+    color: var(--text-main);
+    flex-wrap: wrap;
+    gap: 2px 8px;
+}
+
+.item-header .left-side strong {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 10pt;
+}
+
+.item-header a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 8.8pt;
+}
+
+.item-header a:hover { text-decoration: underline; }
+
+.item-header .right-side {
+    font-size: 8.6pt;
+    color: var(--text-light);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.item-sub {
+    font-size: 8.5pt;
+    color: var(--text-muted);
+    margin-top: 2px;
+    margin-bottom: 4px;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.item ul {
+    margin: 0;
+    padding-left: 16px;
+}
+
+.item ul li {
+    margin-bottom: 2.5px;
+    text-align: justify;
+    font-size: 9.1pt;
+    line-height: 1.4;
+}
+
+.item ul li code {
+    font-family: 'Courier New', monospace;
+    font-size: 8.5pt;
+    background: #f1f5f9;
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+/* ─── Education ─────────────────────────────────────────────────────────────── */
+.education .item-header .left-side strong {
+    font-size: 10pt;
+}
+
+.education .item-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+/* ─── Print overrides ───────────────────────────────────────────────────────── */
+@media print {
+    .no-print-bar { display: none !important; }
+    body { padding: 0; }
+    .container { padding: 0; max-width: 100%; }
+    a { color: var(--link-color) !important; }
+    .item ul li code { background: #f1f5f9 !important; }
+}
